@@ -1,0 +1,118 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #0a0a0f;
+  color: #eee;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #00f5ff;
+}
+nav .menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #eee;
+  transition: 0.3s;
+}
+nav .menu a:hover {
+  color: #00f5ff;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('assets/bg.jpg') center/cover fixed;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
+}
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #00f5ff;
+  color: #000;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.hero button:hover {
+  background: #0ff;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.page-header h1 {
+  font-size: 2.5em;
+  color: #00f5ff;
+}
+
+/* Cards */
+.card {
+  background: #1a1a2e;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+form button {
+  background: #00f5ff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.contact-info p {
+  margin: 10px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
