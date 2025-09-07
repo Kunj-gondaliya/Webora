@@ -295,6 +295,7 @@ body.company-page {
   color: #555;
   font-family: Arial, Helvetica, sans-serif;
   font-size:20px;
+  padding: 10px 0px;
 }
 .company-hero .logo-box img {
   max-width: 220px;
