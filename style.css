@@ -44,7 +44,7 @@ nav .menu a {
 }
 
 nav .menu a:hover {
-  color: #0070f3;
+  color: lightpink;
 }
 
 /* ========== HERO (Parallax) ========== */
@@ -119,7 +119,7 @@ section {
 /* ========== CARDS ========== */
 .card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -481,4 +481,95 @@ nav {
 .menu a:hover::after,
 .menu a.active::after {
   width: 100%;
+}
+.why-choose-us, .web-development {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.why-choose-us h2, .web-development h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.feature-card {
+  flex: 1 1 200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.feature-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.web-development {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.web-development .content {
+  flex: 1;
+}
+
+.web-development .image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.feature-card img {
+  width: 100px;   /* bigger image */
+  height: auto;
+  margin-bottom: 15px;
+}
+.web-development {
+  padding: 60px 10%;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.web-development h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.web-development p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.web-development ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.web-development ul li {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.big-image {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 50px;
+}
+.feature-card.wide img{
+  width: 600px;
 }
