@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webora - Contact</title>
+  <title>Contact Us - Webora</title>
   <link rel="stylesheet" href="style.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("m4dw4UrTId_-X4gSl"); // 🔹 Replace with your Public Key
+    })();
+  </script>
 </head>
 <body>
   <nav>
@@ -21,28 +28,54 @@
     </div>
   </nav>
 
-  <section class="page-header">
-    <h1>Contact Us</h1>
-    <p><h4>We’d love to hear from you. Fill out the form below.</h4></p>
-  </section>
+  <section class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have any questions? Send us a message and we’ll get back to you!</p>
 
-  <section class="contact">
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="from_name" required>
+        </div>
 
-    <div class="contact-info">
-      <p><strong>Email:</strong> gondaliyakunj71@gmail.com</p>
-      <p><strong>Phone:</strong> +91-9727209868</p>
-      <p><strong>Address:</strong> Surat, India</p>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="from_email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <p id="form-status" style="margin-top:15px; font-weight:600;"></p>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Webora. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Handle form submission
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_tb07o4u", "template_e2gje16", this)
+        .then(() => {
+          document.getElementById("form-status").innerText = "✅ Message sent successfully!";
+          document.getElementById("form-status").style.color = "green";
+          this.reset();
+        }, (error) => {
+          document.getElementById("form-status").innerText = "❌ Failed to send. Try again later.";
+          document.getElementById("form-status").style.color = "red";
+          console.error("EmailJS Error:", error);
+        });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI/UX Designer - Careers at Webora</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="company.html">About us</a>
+    </div>
+  </nav>
+
+  <section class="job-detail">
+    <div class="container">
+      <h1 class="job-title">UI/UX Designer</h1>
+      <p class="job-meta"><strong>Location:</strong> Remote / On-site | <strong>Type:</strong> Full-time</p>
+
+      <h2>About the Role</h2>
+      <p>We need a creative UI/UX Designer to build beautiful and user-friendly interfaces that enhance customer experience.</p>
+
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>Create wireframes, prototypes, and user flows in Figma/Adobe XD.</li>
+        <li>Collaborate with frontend developers to implement designs.</li>
+        <li>Ensure consistent branding and usability across platforms.</li>
+        <li>Conduct user research and usability testing.</li>
+      </ul>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>Proficiency in Figma, Adobe XD, or Sketch.</li>
+        <li>Strong portfolio showcasing UI/UX work.</li>
+        <li>Understanding of responsive and mobile-first design.</li>
+      </ul>
+
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".job-title", {opacity: 0, y: -30, duration: 1});
+    gsap.from(".job-detail h2", {opacity: 0, x: -50, duration: 1, stagger: 0.3});
+    gsap.from(".job-detail ul li", {opacity: 0, x: 50, duration: 0.8, stagger: 0.2});
+    gsap.from(".btn", {opacity: 0, scale: 0.8, duration: 0.8, delay: 1});
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Developer - Careers at Webora</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="company.html">About us</a>
+    </div>
+  </nav>
+
+  <section class="job-detail">
+    <div class="container">
+      <h1 class="job-title">Backend Developer</h1>
+      <p class="job-meta"><strong>Location:</strong> Remote / On-site | <strong>Type:</strong> Full-time</p>
+
+      <h2>About the Role</h2>
+      <p>We are looking for a backend developer with strong knowledge in Node.js and database systems to power scalable, secure, and efficient applications.</p>
+
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>Develop server-side logic and APIs with Node.js.</li>
+        <li>Design and manage relational and NoSQL databases.</li>
+        <li>Integrate third-party services and RESTful APIs.</li>
+        <li>Ensure application security and performance.</li>
+      </ul>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>Proficiency in Node.js and Express.js.</li>
+        <li>Experience with MongoDB, MySQL, or PostgreSQL.</li>
+        <li>Knowledge of authentication, security, and REST APIs.</li>
+      </ul>
+
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".job-title", {opacity: 0, y: -30, duration: 1});
+    gsap.from(".job-detail h2", {opacity: 0, x: -50, duration: 1, stagger: 0.3});
+    gsap.from(".job-detail ul li", {opacity: 0, x: 50, duration: 0.8, stagger: 0.2});
+    gsap.from(".btn", {opacity: 0, scale: 0.8, duration: 0.8, delay: 1});
+  </script>
+</body>
+</html>
