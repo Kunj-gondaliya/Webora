@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How SEO Impacts Your Website - Webora Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="company.html">About us</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1>How SEO Impacts Your Website</h1>
+    <p><h4>Why Search Engine Optimization matters for growth</h4></p>
+  </section>
+
+  <section class="blog-detail">
+    <div class="blog-content">
+      <p>SEO (Search Engine Optimization) is the process of improving your website’s visibility in search engines like Google. A well-optimized site ranks higher, attracts more organic visitors, and builds trust with customers.</p>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <h3>1. Visibility & Ranking</h3>
+          <p>Higher ranking means more traffic. The first page of Google captures 71% of search traffic clicks.</p>
+        </div>
+        <div class="blog-card">
+          <h3>2. Credibility & Trust</h3>
+          <p>Users trust websites that appear at the top of search results. Good SEO improves brand authority.</p>
+        </div>
+        <div class="blog-card">
+          <h3>3. Better User Experience</h3>
+          <p>SEO requires mobile-friendliness, fast loading, and quality content—all improving UX.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".blog-card", {
+      scrollTrigger: {
+        trigger: ".blog-grid",
+        start: "top 85%"
+      },
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power3.out"
+    });
+  </script>
+</body>
+</html>

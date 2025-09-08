@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Website Development - Webora</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="assets/webora.png" alt="Webora Logo">
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="company.html">About Us</a>
+    </div>
+  </nav>
+<a href="services.html" style="color: blue;">←Back to services</a>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Custom Website Development</h1>
+    <p>Tailored, modern, and responsive websites designed to help your business succeed online.</p>
+  </header>
+
+  <!-- Service Details -->
+  <section class="service-details">
+    <div class="service-card">
+      <h2>Responsive Design</h2>
+      <p>We build websites that look stunning on desktops, tablets, and smartphones — ensuring a seamless experience.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>SEO-Friendly</h2>
+      <p>Optimized websites that rank higher on Google and bring organic traffic to your business.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Custom Features</h2>
+      <p>From booking systems to dashboards, we integrate powerful tools to fit your business model.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Why Choose Webora?</h2>
+      <p>Our values are simple: <strong>Future, Affordability, Trust</strong>.  
+      We work with startups and businesses that want their digital presence to stand out.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="contact.html" class="cta-btn">Start Your Project</a>
+  </div>
+
+  <!-- Floating Button -->
+  <button class="contact-toggle" onclick="toggleContact()">💬 Contact Us</button>
+
+  <!-- Contact Panel -->
+  <div id="contact-panel" class="contact-panel">
+    <div class="contact-header">
+      <h3>Contact Us</h3>
+      <span class="close-btn" onclick="toggleContact()">×</span>
+    </div>
+    <form class="contact-form">
+      <label>Name</label>
+      <input type="text" placeholder="Your Name" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="Your Email" required>
+
+      <label>Message</label>
+      <textarea placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>

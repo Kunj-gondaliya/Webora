@@ -39,32 +39,39 @@
   <!-- About -->
   <section class="why-choose-us">
   <h2>Why Choose Us</h2>
-  <p>We provide professional and reliable solutions that help businesses grow online.</p>
-
   <div class="features">
-    <div class="feature-card">
-      <img src="assets/icons/speed.jpg" alt="Fast Delivery">
+
+    <div class="feature-card" onclick="openModal('fast')">
+      <div class="what"><img src="assets/icons/speed.jpg" alt="Fast Delivery"></div>
       <h3>Fast Delivery</h3>
-      <p>We deliver websites and apps quickly without compromising on quality.</p>
+      <p>Quick turnaround time for all projects.</p>
     </div>
-    <div class="feature-card">
-      <img src="assets/icons/price.png" alt="Affordable Pricing">
-      <h3>Affordable Pricing</h3>
-      <p>We provide high-quality services at prices that suit startups and enterprises alike.</p>
-    </div>
-    <div class="feature-card">
-      <img src="assets/icons/quality.jpg" alt="Quality Designs">
-      <h3>Quality Designs</h3>
-      <p>Modern, responsive, and engaging designs that attract your audience.</p>
-    </div>
-    <div class="feature-card wide">
+
+    <div class="feature-card align" onclick="openModal('support')">
       <img src="assets/icons/support.png" alt="24/7 Support">
       <h3>24/7 Support</h3>
-      <p>We are always here to help you with any updates or issues.</p>
+      <p>We’re always here for you.</p>
     </div>
+
   </div>
 </section>
 
+<!-- Modals -->
+<div id="modal-fast" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('fast')">&times;</span>
+    <h2>Fast Delivery</h2>
+    <p>We ensure that your projects are completed quickly without compromising quality. Our efficient workflows allow startups and businesses to launch faster.</p>
+  </div>
+</div>
+
+<div id="modal-support" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('support')">&times;</span>
+    <h2>24/7 Support</h2>
+    <p>Our team is available round the clock to resolve any queries, provide updates, and ensure your business runs smoothly.</p>
+  </div>
+</div>
 <section class="web-development">
   <h2>Web Development</h2>
   <p>

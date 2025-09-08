@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trend 3 - Micro-Animations & Interactive Elements</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
+    nav .logo img { height:50px; }
+    nav .menu a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
+    nav .menu a:hover, nav .menu a.active { color:#007BFF; }
+    .page-header { text-align:center; padding:60px 20px 30px 20px; background:#007BFF; color:#fff; }
+    .page-header h1 { margin:0; font-size:2.5rem; }
+    .page-header p { font-size:1.2rem; margin-top:10px; }
+    .content { max-width:900px; margin:40px auto; padding:0 20px; background:#fff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); padding:30px; }
+    .content h2 { color:#007BFF; }
+    .content p { line-height:1.6; margin-top:10px; }
+    .back-link { display:inline-block; margin-bottom:20px; text-decoration:none; color:#007BFF; font-weight:bold; }
+    footer { text-align:center; padding:20px; background:#fff; box-shadow:0 -2px 5px rgba(0,0,0,0.05); margin-top:50px; }
+    .example {
+      background:#f0f8ff;
+      padding:20px;
+      margin:20px 0;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .example:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+    .content h2 {
+  color: #007BFF;
+  margin-top: 40px; /* Add extra space above */
+}
+
+.example {
+  background:#f0f8ff;
+  padding:20px;
+  margin:10px 0 40px 0; /* top 20px, bottom 40px */
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.section {
+  margin-top: 100px;
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1>Micro-Animations & Interactive Elements</h1>
+    <p>Trend 3 – Top Web Design Trend 2025</p>
+  </section>
+
+  <div class="content">
+    <a href="webtrend.html" class="back-link">← Back to Top 5 Trends</a>
+
+    <h2>What are Micro-Animations?</h2>
+    <p>Micro-animations are subtle movements in UI elements that provide feedback and guide users. They make the interface feel alive without being overwhelming.</p>
+
+    <div class="example">
+      <h3>Example:</h3>
+      <p>Button hover animations, loading spinners, and subtle card flips are common micro-animations enhancing UX.</p>
+    </div>
+<div class="section"> 
+    <h2>Why it’s Popular in 2025</h2>
+    <p>Interactive elements engage users, provide visual feedback, and improve navigation. They help make websites feel intuitive and modern.</p>
+    </div>
+
+    <h2>How to Implement</h2>
+    <p>Use CSS transitions and keyframes for subtle animations. Tools like GSAP allow smooth, high-performance animation for more complex interactions.</p>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".example, .content h2, .content p", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out",
+      scrollTrigger: { trigger: ".content", start: "top 80%" }
+    });
+  </script>
+
+</body>
+</html>

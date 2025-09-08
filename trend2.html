@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trend 2 - Dark Mode & Neumorphism</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
+    nav .logo img { height:50px; }
+    nav .menu a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
+    nav .menu a:hover, nav .menu a.active { color:#007BFF; }
+    .page-header { text-align:center; padding:60px 20px 30px 20px; background:#1e1e2f; color:#fff; }
+    .page-header h1 { margin:0; font-size:2.5rem; }
+    .page-header p { font-size:1.2rem; margin-top:10px; color: white;}
+    .content { max-width:900px; margin:40px auto; padding:0 20px; background:#fff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); padding:30px; }
+    .content h2 { color:#007BFF; }
+    .content p { line-height:1.6; margin-top:10px; }
+    .back-link { display:inline-block; margin-bottom:20px; text-decoration:none; color:#007BFF; font-weight:bold; }
+    footer { text-align:center; padding:20px; background:#fff; box-shadow:0 -2px 5px rgba(0,0,0,0.05); margin-top:50px; }
+    .neumorphic {
+      background: #e0e0e0;
+      border-radius: 20px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      padding: 20px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1>Dark Mode & Neumorphism</h1>
+    <p>Trend 2 – Top Web Design Trend 2025</p>
+  </section>
+
+  <div class="content">
+    <a href="webtrend.html" class="back-link">← Back to Top 5 Trends</a>
+
+    <div class="neumorphic">
+      <h2>What is Dark Mode & Neumorphism?</h2>
+      <p>Dark mode interfaces use darker backgrounds with light text, reducing eye strain and creating a sleek look. Neumorphism adds soft, 3D-like effects to UI elements, giving depth and modernity.</p>
+    </div>
+
+    <div class="neumorphic">
+      <h2>Why it’s Popular in 2025</h2>
+      <p>Users enjoy the aesthetic and reduced glare of dark mode. Neumorphic designs provide a fresh, tactile feeling to buttons, cards, and other elements, enhancing UX.</p>
+    </div>
+
+    <div class="neumorphic">
+      <h2>How to Implement</h2>
+      <p>Combine dark backgrounds with bright accent colors. Use subtle shadows and highlights for neumorphic buttons and cards. Keep it minimal to avoid clutter.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".neumorphic", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: { trigger: ".neumorphic", start: "top 80%" }
+    });
+  </script>
+
+</body>
+</html>

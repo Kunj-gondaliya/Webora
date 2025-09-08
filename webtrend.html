@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 5 Web Design Trends 2025 - Webora Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo img {
+      height: 50px;
+    }
+
+    nav .menu a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav .menu a:hover, nav .menu a.active {
+      color: #007BFF;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 30px 20px;
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .trend {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .trend:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .trend img {
+      width: 250px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .trend-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .trend-content h2 {
+      margin-top: 0;
+      color: #007BFF;
+    }
+
+    .trend-content p {
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+      margin-top: 50px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .trend {
+        flex-direction: column;
+      }
+      .trend img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+ <a href="blog.html" class="back-link">← Back to Blog</a>
+  <section class="page-header">
+    <h1>Top 5 Web Design Trends 2025</h1>
+    <p>Stay ahead with the latest UI/UX innovations shaping the web.</p>
+  </section>
+
+  <div class="content">
+   
+
+    <div class="trend" onclick="window.location.href='trend1.html'">
+      <img src="assets/minimalist1.jpg" alt="Trend 1">
+      <div class="trend-content">
+        <h2>1. Minimalist Design with Bold Typography</h2>
+        <p>Clean layouts with bold fonts dominate 2025, creating clarity and focus for users.</p>
+      </div>
+    </div>
+
+    <div class="trend" onclick="window.location.href='trend2.html'">
+      <img src="assets/neuro.jpg" alt="Trend 2">
+      <div class="trend-content">
+        <h2>2. Dark Mode & Neumorphism</h2>
+        <p>Dark-themed interfaces and soft, 3D-like neumorphic elements enhance modern aesthetics.</p>
+      </div>
+    </div>
+
+    <div class="trend" onclick="window.location.href='trend3.html'">
+      <img src="assets/interact.jpg" alt="Trend 3">
+      <div class="trend-content">
+        <h2>3. Micro-Animations & Interactive Elements</h2>
+        <p>Subtle animations guide users and improve engagement without overwhelming them.</p>
+      </div>
+    </div>
+
+    <div class="trend" onclick="window.location.href='trend4.html'">
+      <img src="assets/AI.jpg" alt="Trend 4">
+      <div class="trend-content">
+        <h2>4. AI-Powered Personalization</h2>
+        <p>Dynamic content and layouts personalized for each user improve conversion rates.</p>
+      </div>
+    </div>
+    <div class="trend" onclick="window.location.href='trend5.html'">
+      <img src="assets/VR.jpg" alt="Trend 5">
+      <div class="trend-content">
+        <h2>5. Immersive 3D & VR Experiences</h2>
+        <p>Websites integrating 3D visuals and VR elements create unforgettable user journeys.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2025 Webora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".trend", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".trend",
+        start: "top 80%"
+      }
+    });
+  </script>
+
+</body>
+</html>

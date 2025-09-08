@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webora - Portfolio</title>
   <link rel="stylesheet" href="style.css">
-<!-- GSAP & ScrollTrigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
   <nav>
@@ -16,7 +16,7 @@
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="portfolio.html" class="<active></active>">Portfolio</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
       <a href="blog.html">Blog</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
@@ -24,48 +24,47 @@
     </div>
   </nav>
 
-  <!-- Portfolio section - REPLACE your old portfolio section with this -->
-<section id="portfolio" class="portfolio-section">
-  <div class="container">
-    <h2 class="section-title" align="center">Our Portfolio</h2>
-    <h4><p class="section-subtitle"  align="center">Some of our best work for clients worldwide.</p></h4>
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title" align="center">Our Portfolio</h2>
+      <p class="section-subtitle" align="center">Some of our best work for clients worldwide.</p>
 
-    <div class="portfolio-grid">
-      <!-- Card 1 -->
-      <article class="card">
-        <div class="card-media">
+      <div class="portfolio-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card-media" onclick="window.location.href='project-shopmate.html'">
           <img src="assets/project1.jpg" alt="E-commerce Platform">
-        </div>
-        <div class="card-body">
-          <h3>E-commerce Platform</h3>
-          <p>Create a <strong>professional e-commerce website</strong> to keep customers longer on your site.</p>
-        </div>
-      </article>
+          </div>
+          <div class="card-body"  onclick="window.location.href='project-shopmate.html'">
+            <h3>E-commerce Platform</h3>
+            <p>Create a <strong>professional e-commerce website</strong> to keep customers longer on your site.</p>
+          </div>
+        </article>
 
-      <!-- Card 2 -->
-      <article class="card">
-        <div class="card-media">
-          <img src="assets/pokkie.jpg" alt="Corporate Website">
-        </div>
-        <div class="card-body">
-          <h3>Corporate Website</h3>
-          <p>Corporate websites tailored for teams and enterprises.</p>
-        </div>
-      </article>
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card-media" onclick="window.location.href='project-globex.html'">
+            <img src="assets/pokkie.jpg" alt="Corporate Website">
+          </div>
+          <div class="card-body" onclick="window.location.href='project-globex.html'">
+            <h3>Corporate Website</h3>
+            <p>Corporate websites tailored for teams and enterprises.</p>
+          </div>
+        </article>
 
-      <!-- Wide card (spans both columns on desktop) -->
-      <article class="card card-wide">
-        <div class="card-media">
-          <img src="assets/project3.jpg" alt="Startup Landing Page">
-        </div>
-        <div class="card-body">
-          <h3>Startup Landing Page</h3>
-          <p>We focus on startups that need lean, high-conversion landing pages and web apps.</p>
-        </div>
-      </article>
+        <!-- Wide card -->
+        <article class="card card-wide">
+          <div class="card-media" onclick="window.location.href='project-zenly.html'">
+            <img src="assets/project3.jpg" alt="Startup Landing Page">
+          </div>
+          <div class="card-body" onclick="window.location.href='project-zenly.html'">
+            <h3>Startup Landing Page</h3>
+            <p>We focus on startups that need lean, high-conversion landing pages and web apps.</p>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     <p>© 2025 Webora. All rights reserved.</p>

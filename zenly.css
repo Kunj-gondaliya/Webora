@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+.zenly-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6a11cb;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 20px 50px;
+  color: white;
+}
+.zenly-header a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+.hero.zenly {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(120deg, #6a11cb, #2575fc, #00ffb3);
+  color: white;
+}
+.hero.zenly h1 {
+  font-size: 3rem;
+}
+.hero.zenly .btn {
+  background: white;
+  color: #6a11cb;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.features {
+  display: flex;
+  justify-content: center;
+  padding: 60px 30px;
+}
+.feature {
+  flex: 1;
+  margin: 15px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.testimonials {
+  background: #f2f2f2;
+  padding: 60px;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #6a11cb;
+  color: white;
+}
+.kunj a {
+text-align: right;
+text-decoration: none;
+margin-top: 20px;
+}

@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.globex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a2a43;
+  color: white;
+  padding: 20px 50px;
+}
+.globex-header a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+.hero.corporate {
+  background: #0a2a43;
+  color: white;
+  text-align: center;
+  padding: 100px 30px;
+}
+.about, .investors {
+  padding: 60px 40px;
+  text-align: center;
+}
+.investors {
+  background: #f2f6fc;
+}
+.investors .btn {
+  background: #0a2a43;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+footer {
+  background: #0a2a43;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.kunj a {
+text-align: right;
+text-decoration: none;
+margin-top: 20px;
+}

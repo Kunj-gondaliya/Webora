@@ -161,3 +161,24 @@ const revealOnScroll = () => {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+function openModal(id) {
+  document.getElementById("modal-" + id).style.display = "flex";
+}
+
+function closeModal(id) {
+  document.getElementById("modal-" + id).style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  let modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+// Toggle Contact Us Side Panel
+function toggleContact() {
+  document.getElementById("contact-panel").classList.toggle("active");
+}
