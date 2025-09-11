@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webora - Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="assets/webora.png" alt="Webora Logo"></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="active">Signup</a>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <h2>Create an Account</h2>
+      <form id="signupForm">
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        <input type="password" id="signupPassword" placeholder="Enter your password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </section>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
