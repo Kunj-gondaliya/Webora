@@ -13,22 +13,25 @@
 <body>
 
   <!-- Navbar -->
-  <nav>
-    <div class="logo">
-      <img src="assets/webora.png" alt="Webora Logo">
-    </div>
-    <div class="menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html">Blog</a>
-      <a href="careers.html">Careers</a>
-      <a href="contact.html">Contact</a>
-      <a href="company.html">About us</a>
-    </div>
-  </nav>
+ <nav>
+  <a href="index.html"> Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="blog.html">Blog</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+  <a href="company.html">About Us</a>
 
+  <!-- User dropdown -->
+  <div class="user-menu">
+    <button id="userBtn">👤 Account ▾</button>
+    <div class="dropdown">
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</nav>
   <!-- Hero -->
   <header class="hero">
     <h1>Building Modern Websites for Your Business</h1>
@@ -91,6 +94,6 @@
   <footer>
     <p>© 2025 Webora. All rights reserved.</p>
   </footer>
-
+<script type="module" src="/js/auth.js"></script>
 </body>
 </html>
