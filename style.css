@@ -1425,55 +1425,278 @@ nav ul li a.active::after {
   width: auto;          /* Keep proportions */
   max-width: 250px;     /* Limit width */
 }
-/* Header logo section */
-.top-header {
-  background: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.logo-container {
-  display: inline-flex;
+  .logo-container {
+  display: flex;
   align-items: center;
-  gap: 15px; /* space between logo and text */
+  justify-content: center; /* centers horizontally */
+  gap: 12px;
+  padding: 0 0;
+  background: white;
 }
 
-.logo-container img {
-  height: 80px;    /* Make logo big */
+.logo-img {
+  height: 160px;  /* bigger logo */
   width: auto;
 }
 
-.logo-container h1 {
-  font-size: 2.5rem;   /* Large text */
-  font-weight: bold;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #333;
+.logo-text {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif; /* clean modern font */
+  color: #222;
+  letter-spacing: 1px;
 }
-/* Import a clean modern font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers horizontally */
+  gap: 12px;
+  padding: 15px 0;
+}
 
-.top-header {
-  background: #fff;
-  padding: 20px 0;
+.logo-img {
+  height: 80px;   /* default large size */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 180px;
+  }
+  .logo-text {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo-img {
+    height: 45px;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Logo image (no shine, just clean) */
+.logo-img {
+  height: 100px;
+  width: auto;
+}
+
+/* Shiny animated text */
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(
+    90deg,
+    #00c6ff,
+    #0072ff,
+    #00c6ff
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 55px;
+  }
+  .logo-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 40px;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+/* Testimonials Section */
+.testimonials {
+  background: #f9f9f9;
+  padding: 60px 20px;
   text-align: center;
 }
 
-.logo-container {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;   /* smaller gap, text closer to logo */
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
 }
 
-.logo-container img {
-  height: 150px;    
-  width: 400px; 
-  border-radius: 70px;
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.logo-container h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+.testimonial-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+  font-weight: bold;
   color: #222;
-  margin: 0 100px 0 0;  /* remove extra spacing */
+}
+/* FAQ Section */
+.faq {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+.faq h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.faq-category {
+  margin-bottom: 40px;
+}
+
+.faq-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #444;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.faq-item:hover {
+  background: #f1f1f1;
+}
+
+.faq-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.faq-item p {
+  margin-top: 8px;
+  display: none;
+  color: #555;
+  font-size: 0.95rem;
+}
+.contact-extra a{
+  display: inline-block;
+  background: blue;
+  color: white;
+  font-weight: 100px;
+}
+.contact-extra {
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
+}
+.switch input {display:none;}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .card {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  border: 1px solid #333;
 }
