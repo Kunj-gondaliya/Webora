@@ -1,0 +1,45 @@
+/* Navbar */
+.navbar {
+  background: #333;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Profile Section */
+.profile {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .profile {
+  background: #1f1f1f;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .navbar {
+  background: #222;
+}
+
+body.dark-mode .navbar a {
+  color: #f1f1f1;
+}

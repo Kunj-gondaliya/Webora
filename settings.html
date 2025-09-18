@@ -3,35 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Settings - Webora</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="auth.js" defer></script>
+  <title>Settings</title>
+  <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-  <!-- Minimal header for account pages -->
-  <header class="account-header">
-    <h2>⚙️ Account Settings</h2>
-    <div>
-      <a href="profile.html">Profile</a> |
-      <a href="settings.html">Settings</a> |
-      <button id="logoutBtn">Logout</button>
-    </div>
-  </header>
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+  </nav>
 
+  <!-- 🔹 Settings Section -->
   <section class="settings">
-    <h1>Update Your Info</h1>
-    <form id="updateForm" class="card">
-      <label for="displayName">Update Name:</label>
-      <input type="text" id="displayName" placeholder="Enter new name">
-      <button type="submit">Save Changes</button>
-    </form>
+    <h2>Settings</h2>
+
+    <!-- Profile Name -->
+    <div class="profile-section">
+      <label for="profileName">Profile Name</label>
+      <input type="text" id="profileName" placeholder="Enter your name">
+      <button class="save-btn">Save Profile Name</button>
+    </div>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-text">Dark Mode</span>
+    </div>
   </section>
-  <div class="theme-toggle">
-  <label class="switch">
-    <input type="checkbox" id="darkModeToggle">
-    <span class="slider round"></span>
-  </label>
-  <span>Dark Mode</span>
-</div>
+
+  <script src="settings.js"></script>
 </body>
 </html>

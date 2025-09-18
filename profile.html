@@ -3,28 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile - Webora</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="auth.js" defer></script>
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-  <!-- Minimal header for account pages -->
-  <header class="account-header">
-    <h2>👤 My Account</h2>
-    <div>
-      <a href="profile.html">Profile</a> |
-      <a href="settings.html">Settings</a> |
-      <button id="logoutBtn">Logout</button>
-    </div>
-  </header>
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="settings.html">Settings</a>
+    <a href="logout.html">Logout</a>
+  </nav>
 
+  <!-- 🔹 Profile Section -->
   <section class="profile">
-    <h1>User Profile</h1>
-    <div class="card">
-      <p><strong>Name:</strong> <span id="userName">Loading...</span></p>
-      <p><strong>Email:</strong> <span id="userEmail">Loading...</span></p>
-      <p><strong>User ID:</strong> <span id="userId">Loading...</span></p>
-    </div>
+    <h2>Your Profile</h2>
+    <p id="profileNameDisplay">Loading profile name...</p>
   </section>
+
+  <script>
+    // Apply saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Load saved profile name
+    const savedName = localStorage.getItem("profileName");
+    document.getElementById("profileNameDisplay").textContent = savedName
+      ? "Hello, " + savedName + " 👋"
+      : "No profile name set.";
+  </script>
 </body>
 </html>

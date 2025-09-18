@@ -192,20 +192,22 @@ gsap.from(".testimonial-card", {
     start: "top 80%"
   } 
 }
-const toggle = document.getElementById('darkModeToggle');
+// Dark Mode Toggle
+const toggleSwitch = document.getElementById("darkModeToggle");
 
-// Load saved preference
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  toggle.checked = true;
+// Load saved theme (if any)
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  toggleSwitch.checked = true;
 }
 
-// Toggle dark mode
-toggle.addEventListener('change', () => {
-  document.body.classList.toggle('dark-mode');
-  if(document.body.classList.contains('dark-mode')){
-    localStorage.setItem('theme','dark');
+// Listen for toggle click
+toggleSwitch.addEventListener("change", () => {
+  if (toggleSwitch.checked) {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
   } else {
-    localStorage.setItem('theme','light');
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
   }
 });
