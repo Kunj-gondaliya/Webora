@@ -66,5 +66,28 @@
     <p>© 2025 Webora. All rights reserved.</p>
   </footer>
   <script type="module" src="/js/auth.js"></script>
+    <!-- Chat widget (paste before </body>) -->
+<div id="chat-widget" class="chat-widget">
+  <button id="chat-toggle" class="chat-toggle" aria-label="Open chat">💬</button>
+
+  <div id="chat-panel" class="chat-panel" role="dialog" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <strong>Webora Support</strong>
+        <div class="chat-sub">We’re here to help — ask anything</div>
+      </div>
+      <button id="chat-close" class="chat-close" aria-label="Close chat">✕</button>
+    </div>
+
+    <div id="chat-body" class="chat-body" aria-live="polite"></div>
+
+    <div class="chat-footer">
+      <input id="chat-input" type="text" placeholder="Type a message and press Enter" />
+      <button id="chat-send" class="chat-send">Send</button>
+    </div>
+  </div>
+</div>
+<script src="js/chat.js"></script>
+
 </body>
 </html>
