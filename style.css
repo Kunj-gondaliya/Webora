@@ -1435,7 +1435,7 @@ nav ul li a.active::after {
 }
 
 .logo-img {
-  height: 160px;  /* bigger logo */
+  height: 400px;  /* bigger logo */
   width: auto;
 }
 
@@ -1455,7 +1455,7 @@ nav ul li a.active::after {
 }
 
 .logo-img {
-  height: 80px;   /* default large size */
+  height: 400px;   /* default large size */
   width: auto;
 }
 
@@ -1490,12 +1490,11 @@ nav ul li a.active::after {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 /* Logo image (no shine, just clean) */
 .logo-img {
-  height: 100px;
+  height: 250px;
   width: auto;
 }
 
@@ -1785,4 +1784,27 @@ body.dark-mode footer {
 @media (max-width:420px) {
   .chat-panel { width: calc(100vw - 28px); height: 70vh; }
   .chat-toggle { right: 12px; bottom: 12px; }
+}
+/* Remove extra space around header */
+.site-header {
+  padding: 5px 10px;   /* reduce top/bottom padding */
+  margin: 0;
+  background: #fff;    /* keep background clean */
+  display: flex;
+  align-items: center; /* vertically center logo */
+  justify-content: center; /* center horizontally (or use flex-start if left side) */
+  border-bottom: 1px solid #eee; /* optional clean separator */
+}
+
+/* Logo container */
+.logo-container {
+  margin: 0;   /* remove extra margin */
+  padding: 0;
+}
+
+/* Logo image itself */
+.logo-img {
+  height: 100px;   /* smaller height */
+  width: auto;    /* keep proportions */
+  display: inline-block;
 }

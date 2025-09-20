@@ -18,6 +18,8 @@
   <section class="profile">
     <h2>Your Profile</h2>
     <p id="profileNameDisplay">Loading profile name...</p>
+    <p id="ageNameDisplay">Loading profile name...</p>
+  
   </section>
 
   <script>
@@ -27,10 +29,13 @@
     }
 
     // Load saved profile name
-    const savedName = localStorage.getItem("profileName");
+    const savedName = localStorage.getItem("profileNameDisplay");
     document.getElementById("profileNameDisplay").textContent = savedName
       ? "Hello, " + savedName + " 👋"
       : "No profile name set.";
+          const savedName = localStorage.getItem("ageNameDisplay");
+    document.getElementById("ageNameDisplay").textContent = savedName
+      ? "YOU ARE " + savedName: "No AGE set.";
   </script>
 </body>
 </html>
