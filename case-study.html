@@ -6,101 +6,210 @@
   <title>Case Studies - Webora</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f9;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
       color: #333;
     }
 
-    header {
-      background: #1d3557;
-      padding: 15px 30px;
-      text-align: center;
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
       color: #fff;
+      padding: 1rem 2rem;
     }
+    .navbar .logo { font-size: 1.5rem; font-weight: bold; }
+    .navbar nav a { color: #fff; margin-left: 20px; text-decoration: none; }
+    .navbar nav a.active { border-bottom: 2px solid #f04e31; }
 
-    header h1 {
-      margin: 0;
+    /* Hero Sections */
+    .hero {
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
     }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; margin-top: 1rem; }
+    .fitgear { background: #1a73e8; }
+    .stylehub { background: #e91e63; }
+    .technova { background: #4caf50; }
 
-    .case-study-section {
-      padding: 40px 20px;
-      max-width: 1000px;
+    /* Case Sections */
+    .case-section {
+      padding: 3rem 2rem;
+      max-width: 900px;
       margin: auto;
     }
+    .case-section.alt { background: #f8f8f8; }
+    .case-section h2 { color: #f04e31; margin-bottom: 1rem; }
+    .case-section ul { list-style: none; padding: 0; }
+    .case-section li { margin: 10px 0; font-size: 1.1rem; }
 
-    .case-study-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    /* Testimonial */
+    .testimonial {
+      background: #111;
+      color: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
     }
+    .testimonial blockquote { font-size: 1.4rem; font-style: italic; }
+    .testimonial .author { margin-top: 1rem; font-weight: bold; }
 
-    .case-study-card h3 {
-      margin: 0 0 10px;
-      color: #1d3557;
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 3rem 2rem;
     }
-
-    .case-study-card p {
-      margin: 0 0 15px;
-      line-height: 1.6;
-    }
-
-    .read-more {
+    .cta h2 { color: #f04e31; }
+    .cta-btn {
       display: inline-block;
-      padding: 8px 14px;
-      background: #2a9d8f;
+      padding: 12px 24px;
+      background: #f04e31;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border-radius: 6px;
+      margin-top: 1rem;
+      transition: 0.3s;
     }
+    .cta-btn:hover { background: #d93d21; }
 
-    .read-more:hover {
-      background: #21867a;
-    }
-
+    /* Footer */
     footer {
-      background: #1d3557;
-      color: #fff;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 1.5rem;
+      background: #111;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Case Studies</h1>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Webora</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="case-study.html" class="active">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <section class="case-study-section">
-    <!-- Case Study 1 stays here -->
-    <div class="case-study-card">
-      <h3>Bloom Crafts</h3>
-      <p>Bloom Crafts was struggling to attract online customers despite having quality handmade products. We launched a modern e-commerce site, integrated SEO, and email marketing.</p>
-      <a href="#" class="read-more">Full Story (Coming Soon)</a>
-    </div>
-
-    <!-- Case Study 2 links to its page -->
-    <div class="case-study-card">
-      <h3>FitGear Hub</h3>
-      <p>FitGear Hub had high bounce rates and low conversions. Webora optimized their website speed, checkout flow, and added a chatbot for 24/7 support.</p>
-      <a href="fitgear-hub.html" class="read-more">Read More</a>
-    </div>
-
-    <!-- Case Study 3 links to its page -->
-    <div class="case-study-card">
-      <h3>Priya – Freelance Designer</h3>
-      <p>Priya needed a professional online portfolio to attract bigger clients. Webora built her a sleek portfolio with strong branding.</p>
-      <a href="priya-designer.html" class="read-more">Read More</a>
+  <!-- CASE STUDY 1: FitGear -->
+  <section class="hero fitgear">
+    <div class="hero-content">
+      <h1>Case Study 1: FitGear</h1>
+      <p>From local sports shop to a global fitness brand.</p>
     </div>
   </section>
+  <section class="case-section">
+    <h2>The Challenge</h2>
+    <p>FitGear struggled with reaching customers outside their city, lacked brand identity, and faced strong competition from bigger stores.</p>
+  </section>
+  <section class="case-section alt">
+    <h2>The Solution</h2>
+    <p>We built a strong e-commerce presence, improved SEO, launched a loyalty program, and created fitness community content.</p>
+  </section>
+  <section class="case-section">
+    <h2>The Results</h2>
+    <ul>
+      <li>300% increase in sales in 12 months</li>
+      <li>Expanded to 15+ countries</li>
+      <li>50k+ loyal subscribers</li>
+    </ul>
+  </section>
+  <section class="testimonial">
+    <blockquote>"Partnering with Webora completely changed our business."</blockquote>
+    <p class="author">— Sarah Johnson, CEO of FitGear</p>
+  </section>
 
+  <!-- CASE STUDY 2: StyleHub -->
+  <section class="hero stylehub">
+    <div class="hero-content">
+      <h1>Case Study 2: StyleHub</h1>
+      <p>Turning a boutique fashion store into an online sensation.</p>
+    </div>
+  </section>
+  <section class="case-section">
+    <h2>The Challenge</h2>
+    <p>StyleHub, a small clothing boutique, had little digital presence. They struggled with limited reach, high ad costs, and low repeat purchases.</p>
+  </section>
+  <section class="case-section alt">
+    <h2>The Solution</h2>
+    <p>We developed a personalized shopping website, integrated influencer marketing, and launched sustainable fashion campaigns.</p>
+  </section>
+  <section class="case-section">
+    <h2>The Results</h2>
+    <ul>
+      <li>400% increase in Instagram followers</li>
+      <li>25% higher customer retention</li>
+      <li>Recognized as a top eco-fashion brand</li>
+    </ul>
+  </section>
+  <section class="testimonial">
+    <blockquote>"Webora helped us become a recognized fashion name across social media."</blockquote>
+    <p class="author">— Emily Clarke, Founder of StyleHub</p>
+  </section>
+
+  <!-- CASE STUDY 3: TechNova -->
+  <section class="hero technova">
+    <div class="hero-content">
+      <h1>Case Study 3: TechNova</h1>
+      <p>Scaling a startup into a global SaaS leader.</p>
+    </div>
+  </section>
+  <section class="case-section">
+    <h2>The Challenge</h2>
+    <p>TechNova was a new SaaS company struggling with user adoption, low conversions, and weak investor interest.</p>
+  </section>
+  <section class="case-section alt">
+    <h2>The Solution</h2>
+    <p>We redesigned their product UI, built a lead generation funnel, improved onboarding, and launched B2B content marketing campaigns.</p>
+  </section>
+  <section class="case-section">
+    <h2>The Results</h2>
+    <ul>
+      <li>Grew to 200k+ active users in 18 months</li>
+      <li>Secured $5M in investor funding</li>
+      <li>Adopted by 1,000+ enterprise clients</li>
+    </ul>
+  </section>
+  <section class="testimonial">
+    <blockquote>"Without Webora’s growth strategy, scaling this fast wouldn’t have been possible."</blockquote>
+    <p class="author">— David Miller, CEO of TechNova</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Want Results Like These?</h2>
+    <p>We can help you grow your business too. Let’s talk!</p>
+    <a href="contact.html" class="cta-btn">Get Started</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 Webora. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Smooth fade-in animation on scroll
+    document.addEventListener("scroll", function() {
+      let sections = document.querySelectorAll(".case-section, .testimonial, .cta");
+      let scrollY = window.scrollY + window.innerHeight;
+      
+      sections.forEach(section => {
+        if (scrollY > section.offsetTop + 386) {
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        }
+      });
+    });
+    // Initial hidden style
+    document.querySelectorAll(".case-section, .testimonial, .cta").forEach(section => {
+      section.style.opacity = "0";
+      section.style.transition = "all 0.8s ease-out";
+    });
+  </script>
 </body>
 </html>
