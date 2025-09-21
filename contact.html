@@ -84,10 +84,15 @@
 
   <script>
     // Handle form submission
+     const subscriberEmail = document.getElementById("subscriberEmail").value;
+
     document.getElementById("contact-form").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      emailjs.sendForm("service_tb07o4u", "template_e2gje16", this)
+      emailjs.sendForm("service_tb07o4u", "template_e2gje16", , {
+      subscriber_email: subscriberEmail
+      // No need to set 'to_email' here; use CC in template for subscriber
+    })
         .then(() => {
           document.getElementById("form-status").innerText = "✅ Message sent successfully!";
           document.getElementById("form-status").style.color = "green";
