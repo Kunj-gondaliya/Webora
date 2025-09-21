@@ -211,3 +211,35 @@ toggleSwitch.addEventListener("change", () => {
     localStorage.setItem("theme", "light");
   }
 });
+// Initialize EmailJS
+(function() {
+  emailjs.init("RASd6lt0BlKCGSMqt"); // Replace with . EmailJS Public Key
+})();
+
+// Newsletter form submission
+document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("newsletter-email").value;
+  const status = document.getElementById("newsletter-status");
+
+  if (!email) {
+    status.textContent = "Please enter your email.";
+    status.style.color = "red";
+    return;
+  }
+
+  // Send using EmailJS
+  emailjs.send("service_tb07o4u", "template_0w9d5ot", {
+    subscriber_email: email
+  })
+  .then(() => {
+    status.textContent = "🎉 Thank you for subscribing!";
+    status.style.color = "lightgreen";
+    document.getElementById("newsletter-form").reset();
+  })
+  .catch(() => {
+    status.textContent = "⚠️ Subscription failed. Try again.";
+    status.style.color = "red";
+  });
+});

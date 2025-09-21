@@ -74,13 +74,10 @@
   function getBotReply(msg) {
   msg = msg.toLowerCase(); // make input case-insensitive
   if (msg.includes("price") || msg.includes("pricing")) {
-    return "💰 Our pricing plans are flexible:\n\n- **Basic (₹499/mo):** Perfect for small businesses & portfolios.\n- **Professional (₹999/mo):** Includes advanced SEO, analytics, and faster hosting.\n- **Enterprise (Custom):** For large-scale projects with 24/7 support, dedicated servers, and priority service.\n\n👉 We also offer one-time project pricing if you don’t want a subscription.";
+    return "💰 Our pricing plans are flexible:\n\n- **Basic (₹499/mo):** Perfect for small businesses & portfolios.\n- **Professional (₹999/mo):** Includes advanced SEO, and faster hosting.\n- **Enterprise (Custom):** For large-scale projects with 24/7 support, dedicated servers, and priority service.\n\n👉 We also offer one-time project pricing if you don’t want a subscription.";
   
   } else if (msg.includes("service") || msg.includes("offer")) {
     return "⚡ We provide a wide range of services:\n\n1. **Web Design & Development** – Modern, responsive, and optimized websites.\n2. **Mobile Apps** – Android & iOS apps built with latest frameworks.\n3. **SEO & Marketing** – Improve visibility and attract more customers.\n4. **Branding** – Logo, graphics, and digital presence.\n\nEvery project is fully customized to meet your goals.";
-
-  } else if (msg.includes("contact")) {
-    return "📞 You can reach us anytime:\n\n- **Email:** support@webora.com\n- **Phone:** +91-9876543210\n- **Contact Form:** Available on our website’s Contact page\n\nWe reply within **24 hours** on weekdays.";
 
   } else if (msg.includes("about")) {
     return "🌍 Webora is a digital-first company passionate about technology. Since 2022, we’ve worked with **50+ businesses worldwide** across e-commerce, education, healthcare, and startups.\n\nOur mission is simple: **make digital simple, modern, and impactful**.";
@@ -106,10 +103,7 @@
   } else if (msg.includes("newsletter") || msg.includes("subscribe")) {
     return "📩 You can subscribe to our **Newsletter** (in the footer of our site). You’ll get updates on:\n\n- New services\n- Case studies\n- Tech tips\n- Special discounts";
 
-  } else {
-    return "🤖 I didn’t get that. Try asking about:\n\n- Pricing\n- Services\n- SEO\n- Portfolio\n- Maintenance\n- Careers\n- Newsletter\n\nI’ll be happy to answer!";
-  }
-
+  } 
   // About Webora
   if (msg.includes("what is webora") || msg.includes("webora") || msg.includes("who are you")) {
     return "🌍 Webora is a **modern web design and digital solutions company**. We build professional websites, apps, and online stores for startups, businesses, and global clients. Our mission is to make high-quality web services affordable and accessible.";
@@ -132,24 +126,19 @@
   } else if (msg.includes("trust") || msg.includes("clients") || msg.includes("reviews")) {
     return "⭐ Our clients say Webora is:\n‘Affordable, professional, and super responsive!’\n\nWe’ve completed **50+ projects** and have a **99% client satisfaction rate**.";
 
-  } else if (msg.includes("price") || msg.includes("pricing") || msg.includes("cost")) {
-    return "💰 Pricing:\n- Basic Website: starts at ₹2,000\n- Business Package: ₹5,000 – ₹10,000\n- E-commerce Stores: ₹12,000 – ₹20,000\n👉 Hosting is just ₹100/year.";
-
-  } else if (msg.includes("service") || msg.includes("offer")) {
+  } else if ( msg.includes("offer")) {
     return "⚡ Services:\n- Web Design & Development\n- E-commerce Stores\n- SEO & Marketing\n- Branding & Graphics\n- Hosting & Maintenance";
 
-  } else {
-    return "🤖 I didn’t get that. Try asking:\n👉 What is Webora, Services, Pricing, Clients, or Mission.";
-}
+  } 
 
   if (msg.includes("price") || msg.includes("pricing") || msg.includes("cost")) {
     return "💰 Our pricing is transparent:\n\n- **Basic Website:** starts at ₹2,000\n- **Business Package:** ₹5,000 – ₹10,000\n- **E-commerce Stores:** ₹12,000 – ₹20,000\n- **Enterprise Solutions:** custom pricing\n\n👉 We also offer **₹100/year hosting** for small projects.";
 
-  } else if (msg.includes("service") || msg.includes("offer") || msg.includes("what do you do")) {
+  } else if (msg.includes("what do you do")) {
     return "⚡ We offer:\n\n- Web Design & Development\n- E-commerce Solutions\n- SEO & Digital Marketing\n- Mobile App Development\n- Branding & Graphics\n- Hosting & Maintenance";
 
   } else if (msg.includes("contact") || msg.includes("support")) {
-    return "📞 Contact us anytime:\n\n- **Email:** support@webora.com\n- **Phone:** +91-9876543210\n- **WhatsApp:** +91-9876543210\n\nWe reply within **24 hours**.";
+    return "📞 Contact us anytime:\n\n- **Email:** gondaliyakunj71@gmail.com\n- **Phone:** +91-9727209868\n- **WhatsApp:** +91-9727209868\n\nWe reply within **24 hours**.";
 
   } else if (msg.includes("about") || msg.includes("who are you")) {
     return "🌍 Webora is a creative digital agency helping startups and businesses go online with modern, fast, and scalable solutions. We’ve served **50+ clients in 5 countries** since 2022.";
@@ -187,7 +176,10 @@
   } else if (msg.includes("ssl") || msg.includes("security")) {
     return "🔒 All our websites come with **Free SSL (https://)** and we provide extra layers of security for enterprise clients.";
 
-  } else if (msg.includes("discount") || msg.includes("offer")) {
+  } else if (msg.includes("founder")){
+    return " KUNJ GONDALIYA IS THE OFFICIAL OWNER OF THE WEBORA . HE IS 16 AND LOOKING FORWARD FOR A BETTER TOMMOROW.";
+  }
+  else if (msg.includes("discount") || msg.includes("offer")) {
     return "🎁 We sometimes run seasonal discounts. Join our Newsletter or follow us on social media to stay updated!";
 
   } else if (msg.includes("training") || msg.includes("learn") || msg.includes("tutorial")) {

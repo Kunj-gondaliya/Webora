@@ -41,7 +41,7 @@
     <div class="dropdown">
       <a href="profile.html">Profile</a>
       <a href="settings.html">Settings</a>
-      <button id="logoutBtn">Logout</button>
+      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
     </div>
   </div>
 </nav>
@@ -123,6 +123,116 @@
 
   </div>
 </section>
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <h2>..Subscribe to Our Newsletter..</h2>
+    <p>Get the latest updates, offers, and web tips from Webora.</p>
+
+    <form id="newsletterForm">
+      <input type="email" id="subscriberEmail" name="subscriber_email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p id="responseMessage"></p>
+  </div>
+</section>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("RASd6lt0BlKCGSMqt"); // Your public key
+
+  const form = document.getElementById("newsletterForm");
+  const responseMessage = document.getElementById("responseMessage");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const subscriberEmail = document.getElementById("subscriberEmail").value;
+
+    // Send email using your template
+    emailjs.send("service_tb07o4u", "template_0w9d5ot", {
+      subscriber_email: subscriberEmail
+      // No need to set 'to_email' here; use CC in template for subscriber
+    })
+    .then(() => {
+      responseMessage.textContent = "✅ Subscription successful! Check your inbox.";
+      responseMessage.style.color = "green";
+      form.reset();
+    })
+    .catch((error) => {
+      responseMessage.textContent = "❌ Something went wrong. Try again.";
+      responseMessage.style.color = "red";
+      console.error("EmailJS Error:", error);
+    });
+  });
+</script>
+
+<!-- CSS Styling -->
+<style>
+  .newsletter-section {
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .newsletter-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .newsletter-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .newsletter-section p {
+    margin-bottom: 25px;
+    color: #cbd5e1;
+  }
+
+  #newsletterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #newsletterForm input[type="email"] {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+  }
+
+  #newsletterForm button {
+    padding: 12px 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #newsletterForm button:hover {
+    background-color: #2563eb;
+  }
+
+  #responseMessage {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    .newsletter-section h2 {
+      font-size: 1.5em;
+    }
+  }
+</style>
 
   <!-- Footer -->
   <footer>

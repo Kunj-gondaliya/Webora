@@ -285,7 +285,7 @@ body.company-page {
 }
 
 .company-hero .logo-box img {
-  max-width: 120px;
+  max-width: 220px;
   margin-bottom: 20px;
 }
 
@@ -303,8 +303,8 @@ body.company-page {
   padding: 10px 0px;
 }
 .company-hero .logo-box img {
-  max-width: 220px;
-  margin-bottom: 15px;
+  max-width: 440px;
+  margin-bottom: 0;
 }
 
 /* Mission & Vision */
@@ -1807,4 +1807,49 @@ body.dark-mode footer {
   height: 100px;   /* smaller height */
   width: auto;    /* keep proportions */
   display: inline-block;
+}
+.newsletter {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.newsletter h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
+}
+
+.newsletter-form button {
+  padding: 12px 20px;
+  border: none;
+  background: #00bcd4;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #0097a7;
 }
