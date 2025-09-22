@@ -54,7 +54,6 @@ nav .menu a:hover {
 
 /* ========== HERO (Parallax) ========== */
 .hero {
-  background: url("assets/bg.jpg") center/cover no-repeat;
   background-attachment: fixed;
   color: #fff;
   text-align: center;
