@@ -7,6 +7,7 @@
 <meta name="keywords" content="Webora, web development, AI, blogs, portfolio, technology" />
 <meta name="author" content="Kunj Gondaliya" />
   <title>Webora - Home</title>
+  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 <!-- GSAP & ScrollTrigger -->
@@ -138,11 +139,9 @@
   </div>
 </section>
 
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  // Initialize EmailJS
-  emailjs.init("RASd6lt0BlKCGSMqt"); // Your public key
+  emailjs.init("RASd6lt0BlKCGSMqt"); // Your Public Key
 
   const form = document.getElementById("newsletterForm");
   const responseMessage = document.getElementById("responseMessage");
@@ -151,10 +150,18 @@
     event.preventDefault();
     const subscriberEmail = document.getElementById("subscriberEmail").value;
 
-    // Send email using your template
+    // ---- 1️⃣ Send to Admin ----
     emailjs.send("service_tb07o4u", "template_0w9d5ot", {
-      subscriber_email: subscriberEmail
-      // No need to set 'to_email' here; use CC in template for subscriber
+      subscriber_email: subscriberEmail,
+      recipient_type: "admin"
+    })
+    .then(() => {
+      // ---- 2️⃣ Send to Subscriber ----
+      return emailjs.send("service_tb07o4u", "template_0w9d5ot", {
+        subscriber_email: subscriberEmail,
+        recipient_type: "subscriber",
+        to_email: subscriberEmail // subscriber gets mail
+      });
     })
     .then(() => {
       responseMessage.textContent = "✅ Subscription successful! Check your inbox.";
@@ -168,6 +175,8 @@
     });
   });
 </script>
+
+
 
 <!-- CSS Styling -->
 <style>
