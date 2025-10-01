@@ -144,7 +144,3 @@ footer {
   border-top: 1px solid var(--border-color);
   background: #0d0d0d;
 }
-body {
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-  color: var(--text-color);
-}

@@ -7,8 +7,7 @@
 }
 
 body {
-  background: #f9fafc;
-  color: #222;
+  
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -78,11 +77,13 @@ nav .menu a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: white;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: white;
 }
 
 .hero button {
@@ -495,6 +496,7 @@ nav {
 .why-choose-us h2, .web-development h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: white;
 }
 
 .features {
@@ -857,6 +859,9 @@ nav {
   margin-bottom: 12px;
   font-size: 1.05rem;
   list-style-type: disc;
+}
+.container {
+  color: white;
 }
 
 /* Blog card links inside blog.html */
@@ -1711,8 +1716,7 @@ input:checked + .slider:before {
 
 /* ====== LIGHT & DARK THEMES ====== */
 body {
-  background: #ffffff;
-  color: #222;
+  
   transition: background 0.3s, color 0.3s;
 }
 
