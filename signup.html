@@ -2,33 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webora - Signup</title>
-  <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="style.css">
+  <title>Register | My Website</title>
+  <link rel="stylesheet" href="login.css">
+  <!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="animations.js"></script>
 </head>
 <body>
-  <nav>
-    <div class="logo"><img src="assets/icons/HI.jpg" alt="Webora Logo"></div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html" class="active">Signup</a>
-    </div>
-  </nav>
+  <div class="wrapper">
+    <div class="login-box">
+      <form id="registerForm">
+        <h2>Register</h2>
 
-  <section class="auth-section">
-    <div class="auth-card">
-      <h2>Create an Account</h2>
-      <form id="signupForm">
-        <input type="email" id="signupEmail" placeholder="Enter your email" required>
-        <input type="password" id="signupPassword" placeholder="Enter your password" required>
-        <button type="submit">Sign Up</button>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="regEmail" required>
+          <label>Email</label>
+        </div>
+
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="regPassword" required>
+          <label>Password</label>
+        </div>
+
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" id="regName" required>
+          <label>Full Name</label>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <div class="register-link">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
       </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
     </div>
-  </section>
+  </div>
 
-  <script type="module" src="js/auth.js"></script>
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Firebase Register JS -->
+  <script type="module" src="signup.js"></script>
 </body>
 </html>

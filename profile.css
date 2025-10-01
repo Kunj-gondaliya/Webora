@@ -20,20 +20,45 @@
 .profile {
   max-width: 600px;
   margin: 30px auto;
-  padding: 20px;
+  padding: 10px;
+}
+
+.profile h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #007bff;
+}
+
+/* Profile Card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   background: #f9f9f9;
+  padding: 15px 20px;
+  margin-bottom: 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  transition: 0.3s;
 }
 
-body.dark-mode {
-  background: #121212;
-  color: #f1f1f1;
+.profile-card .icon {
+  font-size: 28px;
+  color: #007bff;
 }
 
-body.dark-mode .profile {
+.profile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode */
+body.dark-mode .profile-card {
   background: #1f1f1f;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  color: #f1f1f1;
 }
 
 body.dark-mode .navbar {
@@ -42,4 +67,21 @@ body.dark-mode .navbar {
 
 body.dark-mode .navbar a {
   color: #f1f1f1;
+}
+
+body.dark-mode h2 {
+  color: #00bfff;
+}
+body.dark-mode {
+  color: #f1f1f1; /* Default text */
+}
+
+body.dark-mode .profile-card {
+  background: #1f1f1f;
+  color: #f1f1f1; /* text inside cards */
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark-mode h2 {
+  color: #00bfff;
 }

@@ -21,48 +21,77 @@
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.settings h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+/* Profile Section Card */
 .profile-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.profile-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .profile-section label {
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.profile-section input {
-  padding: 8px;
-  border-radius: 6px;
+.profile-section input,
+.profile-section select {
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.2s;
 }
 
+.profile-section input:focus,
+.profile-section select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Save Button */
 .save-btn {
   background: #007bff;
   color: #fff;
-  padding: 8px 16px;
+  padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-top: 10px;
 }
 
 .save-btn:hover {
   background: #0056b3;
 }
 
-/* Toggle Switch */
+/* Theme Toggle */
 .theme-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .switch {
@@ -81,10 +110,9 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 24px;
 }
 
@@ -94,7 +122,7 @@
   height: 18px; width: 18px;
   left: 3px; bottom: 3px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
@@ -106,21 +134,51 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background: #121212;
+/* Dark Mode */
+body.dark-mode .profile-section {
+  background: #1f1f1f;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
   color: #f1f1f1;
 }
 
-body.dark-mode .settings {
-  background: #1f1f1f;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+body.dark-mode input,
+body.dark-mode select {
+  background: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #555;
 }
 
-body.dark-mode .navbar {
-  background: #222;
+body.dark-mode .save-btn {
+  background: #00bfff;
 }
 
-body.dark-mode .navbar a {
+body.dark-mode .save-btn:hover {
+  background: #0094d6;
+}
+
+body.dark-mode .settings h2 {
+  color: #00bfff;
+}
+/* Dark Mode for text */
+body.dark-mode {
+  color: #f1f1f1; /* Default text color */
+}
+
+body.dark-mode h2 {
+  color: #00bfff;
+}
+
+body.dark-mode label {
+  color: #f1f1f1;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  color: #f1f1f1; /* text inside input/select */
+  background: #2a2a2a;
+  border: 1px solid #555;
+}
+
+body.dark-mode .toggle-text {
   color: #f1f1f1;
 }

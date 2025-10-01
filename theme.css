@@ -144,3 +144,14 @@ footer {
   border-top: 1px solid var(--border-color);
   background: #0d0d0d;
 }
+/* Apply smooth transitions to the whole body and elements */
+body, .profile-card, .profile-section, input, select, .save-btn, h2 {
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+.slider {
+  transition: 0.4s all;
+}
+
+.slider:before {
+  transition: 0.4s all;
+}

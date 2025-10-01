@@ -243,3 +243,17 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     status.style.color = "red";
   });
 });
+// force open the official webora page
+
+onAuthStateChanged(auth, (user) => {
+  const path = window.location.pathname;
+  const isLoginOrSignup = path.endsWith("official_page.html");
+document.addEventListener("DOMContentLoaded", () => {
+  const userBtn = document.getElementById("userBtn");
+  const dropdown = document.querySelector(".user-menu .dropdown");
+
+  if (userBtn && dropdown) {
+    userBtn.addEventListener("click", () => {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+  }
