@@ -27,7 +27,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // ✅ Successful login → redirect
-      window.location.href = "index.html";
+      window.location.href = "official_page.html";
     })
     .catch((error) => {
       alert("Login Failed: " + error.message);
