@@ -1,12 +1,19 @@
 
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://webflow.com -->
-<!-- Last Published: Sat Sep 06 2025 20:15:39 GMT+0000 (Coordinated Universal Time) -->
-<html
+<html data-wf-domain="www.webora.great-site.net"
+
 data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
 "688c53958c286a5e5aa8aae5" lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=375, user-scalable=no">
+<style>
+  body {
+    max-width: 393px;   /* lock content to mobile width */
+    margin: 0 auto;     /* center on bigger screens */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* optional mobile "phone" feel */
+  }
+</style>
   <title>Portal to the Future</title>
   <meta content=
   "Step through a scroll-driven portal into the future of the web—AI visuals, adaptive layouts, helpful agents, and spatial interfaces told as a living story."
@@ -91,7 +98,7 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
         <div class="hero_heading-wrapper">
           <h1 class="hero_heading">Portal to the Future<br></h1>
           <div class="hero_sun-text-wrapper">
-            <p class="paragraph-16 txt-white">WEBFLOW</p>
+            <p class="paragraph-16 txt-white">WEBORA</p>
             <p class="paragraph-16 txt-white">GSAP</p>
           </div>
         </div>
@@ -106,7 +113,7 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
         <div class="hero_sub-heading-container">
           <div class="hero-text">
             <p class="paragraph-16 txt-white">Discover the future
-            of the web powered by Webflow IX3</p>
+            of the web powered by Webora</p>
           </div>
           <p class="paragraph-16 txt-white">Scroll to explore</p>
         </div>
@@ -940,10 +947,19 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
               story and transport people to a new reality.<br>
               <br>
               Start shaping the future with IX3 + GSAP!<br></p>
-            </div><a target="_blank" class=
-            "btn-primary w-inline-block">
-            <p onclick="window.location.href='signup.html'">Start Designing the Future</p></a>
-          </div>
+            </div> <a href="javascript:void(0);" class="btn-primary w-inline-block" onclick="checkLogin()">
+  <p>Start Designing the Future</p>
+</a>
+
+<script>
+  function checkLogin() {
+    if (localStorage.getItem("loggedIn") === "true") {
+      window.location.href = "index.html";  // already logged in
+    } else {
+      window.location.href = "login.html";  // not logged in
+    }
+  }
+</script>
           <div fade-in="1" class="footer_wrapper-text"><img src=
           "https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture.avif"
           loading="lazy" sizes=
@@ -1017,4 +1033,3 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   </script>
 </body>
 </html>
-Download HTML Source Code

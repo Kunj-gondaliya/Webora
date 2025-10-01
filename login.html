@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* prevent mobile shrinking */
+    body {
+      min-width: 1024px;   /* or your desktop design width */
+      margin: 0;
+      background: #f8f8f8;
+    }
+  </style>
   <meta charset="UTF-8">
   <title>Login | My Website</title>
   <link rel="stylesheet" href="login.css">
@@ -39,6 +48,13 @@
       </form>
     </div>
   </div>
+  <script>
+  function login() {
+    // after checking username/password
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html"; 
+  }
+</script>
 
   <!-- Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
