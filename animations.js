@@ -83,3 +83,4 @@ if (toggle) {
     gsap.to("body", { duration: 0.5, backgroundColor: toggle.checked ? "#121212" : "#f9f9f9" });
   });
 }
+
