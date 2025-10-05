@@ -1912,3 +1912,75 @@ body.dark-mode footer {
 .user-menu .dropdown .logbtn button:hover {
   background: #f0f0f0;
 }
+.skills-section, .certifications {
+  padding: 80px 10%;
+  background: #f9f9fb;
+  text-align: center;
+}
+
+.skills-section h2, .certifications h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.skills-grid, .cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skill-card, .cert-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  width: 180px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover, .cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill-card span {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.cert-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.cert-card h4 {
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .skill-card, .cert-card {
+    width: 45%;
+  }
+}
