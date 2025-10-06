@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Process – Webora</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f4f7fa, #e9eef5);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    nav img {
+      height: 45px;
+    }
+
+    nav .menu a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav .menu a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #004aad;
+      transition: 0.3s;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+    }
+
+    /* Process Section */
+    .process-section {
+      padding: 80px 20px;
+      text-align: center;
+      color: #333;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .process-section h2 {
+      font-size: 2.5rem;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .process-section .subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 60px;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 40px;
+      position: relative;
+    }
+
+    .step {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      padding: 40px 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .step:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .step .icon {
+      font-size: 2rem;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      background: #004aad;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 0 20px rgba(0,74,173,0.3);
+    }
+
+    .step h3 {
+      color: #004aad;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 60px;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+     .step {
+        padding: 30px 20px;
+      }
+      .step .icon {
+        height: 70px;
+        width: 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img src="assets/icons/HI.jpg" alt="Webora Logo">
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section id="our-process" class="process-section">
+    <h2>Our Process</h2>
+    <p class="subtitle">How Webora transforms your ideas into fully functional digital products.</p>
+
+    <div class="process-timeline">
+      <div class="step">
+        <div class="icon">🧭</div>
+        <h3>1. Discovery & Research</h3>
+        <p>We begin by understanding your business objectives, audience, and brand values. Through brainstorming and analysis, we shape a project strategy tailored for success.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">🎨</div>
+        <h3>2. Design & Prototyping</h3>
+        <p>Our design team creates interactive wireframes and prototypes. Every design decision is made to ensure usability, visual appeal, and brand consistency.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">💻</div>
+        <h3>3. Development</h3>
+        <p>Our developers bring the approved design to life with clean, optimized code using modern frameworks, ensuring performance, responsiveness, and scalability.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">🧪</div>
+        <h3>4. Testing & Quality Assurance</h3>
+        <p>Every element is tested for functionality, speed, and compatibility across devices. Bugs are fixed and performance is refined for a flawless experience.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">🚀</div>
+        <h3>5. Launch & Support</h3>
+        <p>We deploy your website or app on secure servers and offer continuous support, maintenance, and updates to keep your digital presence strong and reliable.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Webora. Designed with 💙 to empower startups and businesses.
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".step").forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+        },
+        y: 70,
+        opacity: 0,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: "power2.out"
+      });
+    });
+  </script>
+</body>
+</html>

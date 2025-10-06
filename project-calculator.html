@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webora – Advanced Quote Estimator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: white;
+      backdrop-filter: blur(12px);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav img {
+      height: 45px;
+    }
+
+    nav .menu a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav .menu a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00b4d8;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 60px auto;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
+
+    select, textarea, input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      color: #333;
+    }
+
+    select {
+      background: #e9f1f5;
+    }
+
+    textarea {
+      resize: none;
+      background: #f0f7fa;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature input {
+      width: 18px;
+      height: 18px;
+    }
+
+    .feature:hover {
+      background: rgba(0,180,216,0.25);
+    }
+
+    button {
+      background: linear-gradient(90deg, #00b4d8, #0077b6);
+      color: white;
+      font-size: 1rem;
+      border: none;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      transform: translateY(-2px);
+    }
+
+    .result {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #dff9fb;
+    }
+
+    .breakdown {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .breakdown h4 {
+      margin-bottom: 10px;
+      color: #00e5ff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+    }
+
+    td, th {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      color: #00b4d8;
+    }
+
+    footer {
+      text-align: center;
+      color: #bbb;
+      padding: 30px 0;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+  <div class="container">
+    <h1> Webora Project Cost Estimator</h1>
+
+    <h3> Select Service Category</h3>
+    <select id="category">
+      <option value="100">Website Development</option>
+      <option value="100">E-Commerce Platform</option>
+      <option value="100">SEO & Marketing</option>
+      <option value="50">Branding / Logo Design</option>
+      <option value="5000">Mobile / Web App Development</option>
+    </select>
+
+    <h3> Add Extra Features</h3>
+    <div class="features-grid">
+      <label class="feature"><input type="checkbox" value="100">SEO Optimization</label>
+      <label class="feature"><input type="checkbox" value="300">Custom Domain + Hosting</label>
+      <label class="feature"><input type="checkbox" value="300">CMS (WordPress/Admin Panel)</label>
+      <label class="feature"><input type="checkbox" value="50">Basic Logo Design</label>
+      <label class="feature"><input type="checkbox" value="600">E-Commerce Functionality</label>
+      <label class="feature"><input type="checkbox" value="300">Analytics & Tracking Setup</label>
+      <label class="feature"><input type="checkbox" value="600">Social Media Integration</label>
+      <label class="feature"><input type="checkbox" value="150">Custom Animations / GSAP</label>
+      <label class="feature"><input type="checkbox" value="100">Content Writing</label>
+      <label class="feature"><input type="checkbox" value="1500">1 Year Maintenance</label>
+    </div>
+
+    <h3> Hosting Type</h3>
+    <select id="hosting">
+      <option value="0">Client Provided Hosting</option>
+      <option value="100">Basic Hosting (1 Year sub-domains)</option>
+      <option value="400">Premium Hosting (1 year private-domains)</option>
+    </select>
+
+    <h3> Timeline</h3>
+    <select id="timeline">
+      <option value="1">Normal (2 Weeks)</option>
+      <option value="2">Fast (1 Week)</option>
+      <option value="3">Urgent (3 Days)</option>
+    </select>
+
+    <h3> Additional Notes</h3>
+    <textarea id="notes" rows="3" placeholder="Tell us more about your vision or requirements..."></textarea>
+
+    <button onclick="calculateQuote()">Calculate Quote ( prices are always negotiable )</button>
+
+    <div class="result" id="quoteResult">Your quote will appear here.</div>
+    <div class="breakdown" id="breakdown"></div>
+  </div>
+
+  <footer>© 2025 Webora. Crafted with 💙 for growing businesses.</footer>
+
+  <script>
+    function calculateQuote() {
+      const category = parseInt(document.getElementById("category").value);
+      const hosting = parseInt(document.getElementById("hosting").value);
+      const timeline = parseFloat(document.getElementById("timeline").value);
+      const features = document.querySelectorAll(".features-grid input:checked");
+
+      let total = category + hosting;
+      let breakdownHTML = `
+        <h4>📊 Project Cost Breakdown</h4>
+        <table>
+          <tr><th>Item</th><th>Cost (₹)</th></tr>
+          <tr><td>Base Category</td><td>${category}</td></tr>
+      `;
+
+      features.forEach(f => {
+        total += parseInt(f.value);
+        breakdownHTML += `<tr><td>${f.parentElement.innerText}</td><td>${f.value}</td></tr>`;
+      });
+
+      breakdownHTML += `<tr><td>Hosting</td><td>${hosting}</td></tr></table>`;
+
+      const adjusted = Math.round(total * timeline);
+      const min = adjusted * 0.9, max = adjusted * 1.25;
+
+      document.getElementById("quoteResult").innerHTML = `
+        💡 Estimated Range: <strong>₹${min.toLocaleString()} – ₹${max.toLocaleString()}</strong><br>
+        <span style="font-size:0.9rem; opacity:0.8;">(Final quote depends on project depth and design complexity.)</span>
+      `;
+
+      document.getElementById("breakdown").innerHTML = breakdownHTML;
+    }
+  </script>
+</body>
+</html>

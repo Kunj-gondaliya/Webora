@@ -1984,3 +1984,20 @@ body.dark-mode footer {
     width: 45%;
   }
 }
+.calculator-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f9ff, #eaf0f9);
+  text-align: center;
+}
+
+.calculator-section h2 {
+  color: #004aad;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.calculator-section .subtitle {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
