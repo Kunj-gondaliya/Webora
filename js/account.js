@@ -1,20 +1,5 @@
 // account.js
 
-// ✅ Dropdown animation
-const userBtn = document.getElementById("userBtn");
-const dropdown = document.querySelector(".user-menu .dropdown");
-
-userBtn.addEventListener("click", () => {
-  dropdown.classList.toggle("show");
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", (event) => {
-  if (!userBtn.contains(event.target) && !dropdown.contains(event.target)) {
-    dropdown.classList.remove("show");
-  }
-});
-
 // ✅ Firebase Logout
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
@@ -39,7 +24,7 @@ logoutBtn.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
       alert("Logged out successfully!");
-      window.location.href = "login.html"; // redirect to login page
+      window.location.href = "login.html"; 
     })
     .catch((error) => {
       console.error("Logout Error:", error);

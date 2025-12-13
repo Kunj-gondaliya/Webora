@@ -2001,3 +2001,164 @@ body.dark-mode footer {
   margin-bottom: 40px;
   font-size: 1rem;
 }
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+.search-box {
+  font-size: 20px;
+  border: solid 0.15em #000000;
+  display: inline-block;
+  position: relative;
+  border-radius: 2.5em;
+}
+.search-box input[type="text"] {
+  font-family: inherit;
+  font-weight: bold;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.3em 2.1em 0.3em 0.4em;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type="text"]:focus {
+  outline: none;
+}
+.search-box input[type="text"]:focus, .search-box input[type="text"]:not(:placeholder-shown) {
+  width: 18em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type="text"]:focus + button[type="reset"], .search-box input[type="text"]:not(:placeholder-shown) + button[type="reset"] {
+  transform: rotate(-45deg) translateY(0);
+  transition: transform 150ms ease-out 800ms;
+}
+.search-box input[type="text"]:focus + button[type="reset"]:after, .search-box input[type="text"]:not(:placeholder-shown) + button[type="reset"]:after {
+  opacity: 1;
+  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
+}
+.search-box button[type="reset"] {
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  transform: rotate(-45deg) translateY(2.2em);
+  transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type="reset"]:before, .search-box button[type="reset"]:after {
+  content: "";
+  background-color: #000000;
+  width: 0.3em;
+  height: 1.0em;
+  position: absolute;
+}
+.search-box button[type="reset"]:after {
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+#suggestions {
+  background: lightgrey;
+  
+  border-color: black;
+  color : red;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  border-radius: 8px;
+  padding: 5px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: none;
+  
+}
+
+
+#suggestions div {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#suggestions div:hover {
+  background: #f0f0f0;
+}
+.search-container {
+    position: relative;     /* KEY FIX */
+    display: inline-block;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;              /* appears under input */
+    right: 0;
+    width: 100%;            /* same width as search box */
+    background: lightgray;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 5px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 9999;
+}
+
+#suggestions div {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#suggestions div:hover {
+    background: #f1f1f1;
+}
+/* Suggestion Box Wrapper */
+#suggestions {
+    width: 100%;
+    max-width: 260px;
+    background: white;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    z-index: 9999;
+}
+
+/* Show state (JS toggles this class) */
+#suggestions.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Suggestion items */
+#suggestions div {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 15px;
+    background: white;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#suggestions div:hover {
+    background: #f5f5f5;
+}

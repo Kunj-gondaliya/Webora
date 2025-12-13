@@ -179,6 +179,129 @@
   } else if (msg.includes("founder")){
     return " KUNJ GONDALIYA IS THE OFFICIAL OWNER OF THE WEBORA . HE IS 16 AND LOOKING FORWARD FOR A BETTER TOMMOROW.";
   }
+  else if (msg.includes("culture") || msg.includes("value") || msg.includes("work style")) {
+  return "🌱 At Webora, we follow a calm and creativity-first work culture. No pressure, no chaos — just clean, efficient, innovative work.";
+}
+else if (msg.includes("belief") || msg.includes("philosophy")) {
+  return "💡 Webora believes in honesty, innovation, transparency, and building long-term partnerships with clients.";
+}
+else if (msg.includes("payment") || msg.includes("pay") || msg.includes("advance")) {
+  return "💳 We accept payments via UPI, Bank Transfer, PayPal, and Razorpay. Most projects require a 30% advance to confirm the timeline.";
+}
+else if (msg.includes("invoice") || msg.includes("bill")) {
+  return "🧾 Yes, we provide invoices for all payments. Company GST invoice support is also available.";
+}
+
+else if (msg.includes("process") || msg.includes("steps") || msg.includes("workflow")) {
+  return "⚙️ Our work process is simple:\n1️⃣ Requirement Gathering\n2️⃣ UI/UX Design\n3️⃣ Development\n4️⃣ Testing\n5️⃣ Deployment\n6️⃣ Training & Support";
+}
+else if (msg.includes("update") || msg.includes("progress")) {
+  return "📅 You will get daily or weekly project updates via WhatsApp, Email, or Trello depending on your preference.";
+}
+else if (msg.includes("app") || msg.includes("android") || msg.includes("ios")) {
+  return "📱 Yes! We develop Android & iOS apps using Flutter and React Native. We also assist with Play Store publishing.";
+}
+else if (msg.includes("play store") || msg.includes("publish app")) {
+  return "🚀 Yes, we help publish your app to the Google Play Store and guide you for Apple App Store approvals.";
+}
+
+else if (msg.includes("hosting") || msg.includes("server")) {
+  return "🖥️ We provide hosting on Firebase, Vercel, Netlify, and VPS servers. We also help with domain, SSL, DNS, and emails.";
+}
+else if (msg.includes("domain") || msg.includes("ssl") || msg.includes("https")) {
+  return "🔒 All our websites come with FREE SSL. We also assist in domain setup, DNS records, and business email creation.";
+}
+else if (msg.includes("analytics") || msg.includes("tracking") || msg.includes("insights")) {
+  return "📊 We integrate Google Analytics, Meta Pixel, Firebase Analytics, Heatmaps, and more to track performance.";
+}
+else if (msg.includes("traffic") || msg.includes("visitors")) {
+  return "🌍 We can set up real-time visitor tracking, user behavior insights, and conversion monitoring tools for your website.";
+}
+else if (msg.includes("content writing") || msg.includes("write content")) {
+  return "✍️ Yes, we provide professional content writing for websites, blogs, social media, and marketing campaigns.";
+}
+else if (msg.includes("brand") || msg.includes("logo") || msg.includes("identity")) {
+  return "🎨 Webora offers branding services including logos, color palettes, typography, and social media kits.";
+}
+else if (msg.includes("privacy") || msg.includes("policy") || msg.includes("terms")) {
+  return "📜 Yes, we can create Privacy Policy, Terms & Conditions, Return Policy, and Cookie Policy pages for your website.";
+}
+else if (msg.includes("instagram") || msg.includes("social") || msg.includes("whatsapp")) {
+  return "📱 We can integrate Instagram feeds, WhatsApp Chat, FB Messenger, and social icons directly into your website.";
+}
+else if (msg.includes("ads") || msg.includes("marketing") || msg.includes("promotion")) {
+  return "📢 We help set up Google Ads, Meta Ads, Instagram promotions, and SEO-based marketing campaigns.";
+}
+else if (msg.includes("achievement") || msg.includes("success") || msg.includes("stats")) {
+  return "🏆 Webora has helped startups grow by over 60% in conversions. We’ve delivered 50+ successful projects across multiple industries.";
+}
+else if (msg.includes("intern") || msg.includes("internship")) {
+  return "🎓 Yes! Webora offers internships in web development, UI/UX, and digital marketing. You can apply through our Careers page.";
+}
+else if (msg.includes("team") || msg.includes("employee") || msg.includes("staff")) {
+  return "👨‍💻 Webora works with a team of in-house developers, designers, and remote collaborators from around the world.";
+}
+else if (msg.includes("fun") || msg.includes("joke")) {
+  return "😂 Developer joke: 'I told my computer I need a break… it said: I can’t CPU do that.'";
+}
+else if (msg.includes("fact") || msg.includes("fun fact")) {
+  return "🤖 Fun fact: Most Webora projects start small and evolve into full-scale digital platforms!";
+}
+else if (msg.includes("startup") || msg.includes("business")) {
+  return "🚀 Webora helps startups build their entire digital identity — website, branding, marketing, and analytics.";
+}
+
+else if (msg.includes("help") || msg.includes("assist")) {
+  return "🤝 I'm here to help! Ask me anything about pricing, services, SEO, portfolio, design, or development.";
+}
+else if (msg.includes("utsav") && msg.includes("who")) {
+  return "👨‍💻 Utsav Vishveliya is one of Webora’s core team members. He contributes to development, feature testing, and workflow optimization.";
+}
+else if (msg.includes("utsav") && msg.includes("role")) {
+  return "🛠️ Utsav plays an important role in Webora’s development cycle — assisting with front-end improvements, backend logic, and overall system stability.";
+}
+else if (msg.includes("utsav") && msg.includes("work")) {
+  return "⚡ Utsav is known for his structured coding approach and rapid problem-solving. He helps in:\n- UI/UX refinement\n- Testing modules\n- Debugging\n- Backend feature assistance\n\nHe ensures smooth project execution and fast delivery.";
+}
+else if (msg.includes("utsav") && msg.includes("about")) {
+  return "🙂 Utsav is calm, disciplined, and always focused. He believes in creating new ideas and improving the system continuously. A strong pillar in Webora’s internal team.";
+}
+else if (msg.includes("utsav") && msg.includes("fun")) {
+  return "😂 Fun Fact: Utsav can gibe ideas faster than many people can only think of starting, great ideology!";
+}
+else if (msg.includes("team") && msg.includes("utsav")) {
+  return "👥 Webora’s team is led by Kunj Gondaliya, with strong support from Utsav Vishveliya — who ensures the development side stays smooth, fast, and scalable.";
+}
+else if (msg.includes("partner") || msg.includes("cofounder") && msg.includes("utsav")) {
+  return "Utsav is not the co-founder, but he is an essential part of Webora’s development team — helping build, test, and refine multiple projects.";
+}
+else if (msg.includes("best developer") || msg.includes("best coder")) {
+  return "🔥 The best developer at Webora is **Kunj Gondaliya**. He writes the full codebase, builds the entire system, and turns ideas into real working features.";
+}
+else if (msg.includes("hi") || msg.includes("hello") || msg.includes("hie") || msg.includes("hii") || msg.includes("hiee") || msg.includes("helo")) {
+  return "Hello! Welcome to Webora-AI. How may I help you today?";
+} 
+else if (msg.includes("who codes") || msg.includes("write code")) {
+  return " All core coding and development is done by **Kunj Gondaliya**. Frontend, backend, UI/UX, Firebase, dashboards — everything is built by him. while utsav also has expertise in ideology!";
+}
+else if (msg.includes("Kunj") || msg.includes("Who is the main")) {
+  return " Kunj is the main index developer.";
+}
+else if (msg.includes("utsav") && msg.includes("do")) {
+  return "💡 Utsav mainly gives ideas, improves concepts, and contributes suggestions. But the full implementation, coding, design, and execution is done by **Kunj**.";
+}
+else if (msg.includes("best") && msg.includes("utsav")) {
+  return "😂 Utsav is great with ideas, but when it comes to actual coding… Kunj is the one who makes everything real.";
+}
+else if (msg.includes("compare") && msg.includes("utsav")) {
+  return "⚡ Utsav contributes with planning and ideas, but **Kunj is the main developer** who writes, structures, and deploys the complete code.";
+}
+else if (msg.includes("is utsav developer")) {
+  return "🙂 Utsav helps with ideas and improvements, but the primary developer — the one who builds everything — is **Kunj Gondaliya**.";
+}
+else if (msg.includes("who built") || msg.includes("creator")) {
+  return "🚀 Webora was entirely built by **Kunj Gondaliya** — including design, development, dashboard, UI, animations, Firebase system, and chatbot logic.";
+}
   else if (msg.includes("discount") || msg.includes("offer")) {
     return "🎁 We sometimes run seasonal discounts. Join our Newsletter or follow us on social media to stay updated!";
 
@@ -186,8 +309,8 @@
     return "📚 Yes, we provide training & tutorials after delivering your project so you can manage it easily without technical knowledge.";
 
   } else {
-    return "🤖 I didn’t understand that. Try asking about:\n👉 Pricing, Services, SEO, Portfolio, Refunds, Maintenance, Careers, Technology, Contact.";
-  }
+  return "🤖 I’m not sure I understood that correctly.\n\nYou can ask me things like:\n- Pricing / plans\n- Our services\n- Portfolio or case studies\n- Who built Webora\n- Careers & hiring\n- SEO / marketing\n- About Kunj or Utsav\n- Project timelines\n- Technology stack\n\nTry asking something again, or be a little more specific — I’m here to help! 😊";
+}
 }
   // events
   sendBtn.addEventListener('click', () => { sendMessage(input.value); input.value=''; input.focus(); });

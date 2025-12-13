@@ -83,4 +83,77 @@ if (toggle) {
     gsap.to("body", { duration: 0.5, backgroundColor: toggle.checked ? "#121212" : "#f9f9f9" });
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    const fileMapping = [
+        { name: "Blog", url: "blog.html" },
+        { name: "Services", url: "services.html" },
+        { name: "Careers", url: "careers.html" },
+        { name: "Contact", url: "contact.html" },
+        { name: "Home", url: "official_page.html" },
+        { name: "Portfolio", url: "portfolio.html" },
+        { name: "Subscription", url: "pricing.html" },
+        { name: "Webora", url: "company.html" },
+        { name: "FAQs", url: "faq.html" }
+    ];
+
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const resetButton = searchForm.querySelector('button[type="reset"]');
+    const suggestionsBox = document.getElementById("suggestions");
+
+    function redirectToPage(url) {
+        window.location.href = url;
+    }
+
+  function generateSuggestions() {
+    const value = searchInput.value.toLowerCase().trim();
+
+    suggestionsBox.innerHTML = "";
+
+    if (!value) {
+        suggestionsBox.classList.remove("show");
+        return;
+    }
+
+    const results = fileMapping.filter(file =>
+        file.name.toLowerCase().includes(value)
+    );
+
+    if (results.length === 0) {
+        suggestionsBox.classList.remove("show");
+        return;
+    }
+
+    suggestionsBox.classList.add("show");
+
+    results.forEach(file => {
+        let item = document.createElement("div");
+        item.textContent = file.name;
+        item.addEventListener("click", () => redirectToPage(file.url));
+        suggestionsBox.appendChild(item);
+    });
+}
+    searchInput.addEventListener("input", generateSuggestions);
+
+    searchForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const value = searchInput.value.trim().toLowerCase();
+        const exact = fileMapping.find(f => f.name.toLowerCase() === value);
+        const first = fileMapping.find(f => f.name.toLowerCase().includes(value));
+        if (exact) redirectToPage(exact.url);
+        else if (first) redirectToPage(first.url);
+    });
+
+    resetButton.addEventListener("click", () => {
+        searchInput.value = "";
+        suggestionsBox.innerHTML = "";
+        suggestionsBox.style.display = "none";
+    });
+
+    searchInput.addEventListener("blur", () => {
+        setTimeout(() => suggestionsBox.style.display = "none", 150);
+    });
+
+});
 

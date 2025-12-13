@@ -27,6 +27,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Primary Meta Tags -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
@@ -50,16 +51,19 @@
   <a href="company.html">About us</a>
 </div>
 
-  <!-- User dropdown -->
-  <div class="user-menu">
-    <button id="userBtn">👤 Account ▾</button>
-    <div class="dropdown">
-      <a href="profile.html">Profile</a>
-      <a href="settings.html">Settings</a>
-      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
-    </div>
-  </div>
+<div class="search-container">
+    <form class="search-box" id="searchForm">
+        <input type="text" placeholder="Search..." aria-label="Search input" id="searchInput">
+        <button type="reset" aria-label="Clear search"></button>
+    </form>
+
+    <!-- Suggestions will appear exactly below search -->
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+	
 </nav>
+
+
 
   <section class="page-header">
     <h1>Webora Blog</h1>
@@ -108,6 +112,114 @@
     </div>
   </div>
 </div>
+
 <script src="js/chat.js"></script>
+<script>
+
+const fileMapping = [
+    { name: "Blog", url: "blog.html" },
+    { name: "Services", url: "services.html" },
+    { name: "Careers", url: "careers.html" },
+    { name: "Contact", url: "contact.html" },
+    { name: "Home", url: "official_page.html" },
+    { name: "Portfolio", url: "portfolio.html" },
+    { name: "Subscription", url: "pricing.html" },
+    { name: "Webora", url: "company.html" },
+    { name: "FAQs", url: "faq.html" }
+];
+
+// DOM
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const resetButton = searchForm.querySelector('button[type="reset"]');
+const suggestionsBox = document.getElementById("suggestions");
+
+
+// --- REDIRECT FIXED ---
+function redirectToPage(url) {
+    window.location.href = url; // FIXED
+}
+
+
+// --- GENERATE SUGGESTIONS ---
+function generateSuggestions() {
+    const value = searchInput.value.toLowerCase().trim();
+
+    // Clear previous
+    suggestionsBox.innerHTML = "";
+
+    if (value.length === 0) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    const results = fileMapping.filter(file =>
+        file.name.toLowerCase().includes(value)
+    );
+
+    if (results.length === 0) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    // Show box
+    suggestionsBox.style.display = "block";
+suggestionsBox.style.position = "absolute";
+
+    results.forEach(file => {
+        let item = document.createElement("div");
+        item.textContent = file.name;
+
+        item.addEventListener("click", () => {
+            redirectToPage(file.url);
+        });
+
+        suggestionsBox.appendChild(item);
+    });
+}
+
+
+// --- EVENTS ---
+searchInput.addEventListener("input", generateSuggestions);
+
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const value = searchInput.value.trim().toLowerCase();
+    if (!value) return;
+
+    const match = fileMapping.find(file =>
+        file.name.toLowerCase() === value
+    );
+
+    if (match) {
+        redirectToPage(match.url);
+        return;
+    }
+
+    // fallback
+    const first = fileMapping.find(file =>
+        file.name.toLowerCase().includes(value)
+    );
+
+    if (first) redirectToPage(first.url);
+});
+
+resetButton.addEventListener("click", () => {
+    searchInput.value = "";
+    suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "none";
+});
+
+searchInput.addEventListener("blur", () => {
+    setTimeout(() => {
+        suggestionsBox.style.display = "none";
+    }, 200);
+});
+
+searchInput.addEventListener("focus", generateSuggestions);
+
+</script>
+<script type="module" src="presence.js"></script>
 </body>
 </html>

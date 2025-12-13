@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unsubscribe • Webora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #020617;
+      padding: 32px;
+      border-radius: 14px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+    p {
+      color: #cbd5f5;
+      font-size: 0.95rem;
+    }
+    button {
+      margin-top: 24px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      background: #ef4444;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #dc2626;
+    }
+    .msg {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Unsubscribe</h1>
+    <p>You will stop receiving emails from Webora.</p>
+
+    <button id="unsubscribeBtn">Unsubscribe</button>
+
+    <div class="msg" id="message"></div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import {
+      getFirestore,
+      doc,
+      deleteDoc
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8F-3r-4iPmacTlGrcNNCxpHiGswoaQ5g",
+      authDomain: "webora-core-16d65.firebaseapp.com",
+      projectId: "webora-core-16d65",
+      storageBucket: "webora-core-16d65.appspot.com",
+      messagingSenderId: "734418138539",
+      appId: "1:734418138539:web:d4b6e2cf73662e6f1f4eee"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    const btn = document.getElementById("unsubscribeBtn");
+    const msg = document.getElementById("message");
+
+    if (!token) {
+      btn.disabled = true;
+      msg.textContent = "Invalid unsubscribe link.";
+      msg.style.color = "orange";
+    }
+
+    btn.addEventListener("click", async () => {
+      btn.disabled = true;
+      msg.textContent = "Unsubscribing...";
+      msg.style.color = "#cbd5f5";
+
+      try {
+        await deleteDoc(doc(db, "newsletter_subscribers", token));
+
+        msg.textContent = "✅ You have been unsubscribed.";
+        msg.style.color = "limegreen";
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "❌ Something went wrong.";
+        msg.style.color = "red";
+        btn.disabled = false;
+      }
+    });
+  </script>
+<script type="module" src="presence.js"></script>
+</body>
+</html>

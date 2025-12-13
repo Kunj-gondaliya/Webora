@@ -1,213 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* prevent mobile shrinking */
-    body {
-      min-width: 1024px;   /* or your desktop design width */
-      margin: 0;
-      background: #f8f8f8;
-    }
-  </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - Webora</title>
-  <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- GSAP CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-<script src="animations.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-    }
-
-    header {
-      background: #fff;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    header img {
-      height: 50px;
-    }
-
-    header h1 {
-      font-size: 22px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .faq-section {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .faq-section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .faq-category {
-      margin-bottom: 25px;
-    }
-
-    .faq-category h3 {
-      margin-bottom: 10px;
-      color: #444;
-    }
-
-    .faq-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
-
-    .faq-item h4 {
-      cursor: pointer;
-      font-size: 18px;
-      color: #222;
-      position: relative;
-      margin: 0;
-    }
-
-    .faq-item h4::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      font-size: 20px;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.active h4::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
-
-    .faq-item p {
-      display: none;
-      padding: 10px 0;
-      color: #555;
-    }
-
-    .faq-item.active p {
-      display: block;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimalist Design Trend</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+<!-- NAVBAR -->
+<nav>
+<a href="webtrend.html">Back to WebTrend</a>
+</nav>
 
-  <!-- General -->
-  <div class="faq-category">
-    <h3>📌 General</h3>
-    <div class="faq-item">
-      <h4>What is Webora?</h4>
-      <p>Webora is a modern web design & hosting company that builds professional websites for startups and businesses.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you work with international clients?</h4>
-      <p>Yes, we serve clients worldwide with online support and project management tools.</p>
-    </div>
-  </div>
+<!-- HEADER -->
+<header class="page-header">
+  <h1>The Rise of Minimalist Design</h1>
+  <p>Why simplicity has become the world’s favorite design style in 2025.</p>
+</header>
 
-  <!-- Pricing -->
-  <div class="faq-category">
-    <h3>💰 Pricing</h3>
-    <div class="faq-item">
-      <h4>How much does it cost to build a website?</h4>
-      <p>Our hosting starts at just ₹100/year. Full website projects typically range between ₹2,000 – ₹15,000 depending on requirements.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you offer refunds?</h4>
-      <p>Yes, if you’re not satisfied within the first 7 days, we provide a full refund.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Can I upgrade my plan later?</h4>
-      <p>Absolutely! You can start with a basic plan and upgrade anytime without downtime.</p>
-    </div>
-  </div>
+<!-- CONTENT -->
+<section class="blog-content">
 
-  <!-- Services -->
-  <div class="faq-category">
-    <h3>⚙️ Services</h3>
-    <div class="faq-item">
-      <h4>What services does Webora offer?</h4>
-      <p>We provide web design, custom development, e-commerce solutions, SEO optimization, and website hosting.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you build e-commerce stores?</h4>
-      <p>Yes, we create professional online stores with payment gateways like Razorpay, PayPal, and Stripe.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Can you redesign my existing website?</h4>
-      <p>Yes, we specialize in modern redesigns that improve speed, design, and SEO.</p>
-    </div>
-  </div>
+  <h2>What Is Minimalist Design?</h2>
+  <p>
+    Minimalist design is a visual style focused on simplicity, clarity, and the removal 
+    of anything that does not serve a purpose. It highlights clean layouts, open space, 
+    and a strong focus on usability. In today’s digital world—where attention spans are 
+    shorter than ever—minimalism helps users focus on what truly matters.
+  </p>
 
-  <!-- Technical -->
-  <div class="faq-category">
-    <h3>💻 Technical</h3>
-    <div class="faq-item">
-      <h4>Will my website be mobile-friendly?</h4>
-      <p>Yes, all our websites are fully responsive and optimized for mobile devices.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you provide SSL certificates?</h4>
-      <p>Yes, every website comes with free SSL security (https://).</p>
-    </div>
-    <div class="faq-item">
-      <h4>What if my website goes down?</h4>
-      <p>We offer 99.9% uptime guarantee and immediate technical support if any downtime occurs.</p>
-    </div>
-  </div>
+  <h2>Why Is Minimalism So Popular?</h2>
+  <p>
+    Over the last few years, minimalism has taken over everything—from websites and apps 
+    to logos and product packaging. Here’s why it’s trending:
+  </p>
+  <ul>
+    <li><strong>Clean & uncluttered layouts</strong> improve user experience.</li>
+    <li><strong>Faster website loading</strong> due to fewer elements.</li>
+    <li><strong>Stronger visual hierarchy</strong> helps users find information quickly.</li>
+    <li><strong>Modern and premium aesthetic</strong> matches current brand identity trends.</li>
+    <li><strong>Better responsiveness</strong> across mobile and tablet devices.</li>
+  </ul>
 
-  <!-- Support -->
-  <div class="faq-category">
-    <h3>📞 Support</h3>
-    <div class="faq-item">
-      <h4>How can I contact support?</h4>
-      <p>You can reach us via email, live chat, or WhatsApp. We respond within 24 hours.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you provide website maintenance?</h4>
-      <p>Yes, we have monthly and yearly maintenance packages for updates, backups, and bug fixes.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Will I get training on how to manage my website?</h4>
-      <p>Yes, we provide tutorials and live training sessions to help you manage your site easily.</p>
-    </div>
-  </div>
+  <h2>Key Elements of Minimalist Design</h2>
+  <p>Minimalism isn’t about removing everything—it’s about keeping only what's necessary.  
+  These are the core elements:</p>
+
+  <ul>
+    <li><strong>Neutral colors:</strong> Whites, blacks, soft grays, and muted tones.</li>
+    <li><strong>Simple typography:</strong> Clean, sans-serif fonts like Inter or Helvetica.</li>
+    <li><strong>Large spacing:</strong> Breathing room improves readability.</li>
+    <li><strong>Flat or subtle shadows:</strong> No clutter, no over-styled elements.</li>
+    <li><strong>Functional layout:</strong> Every element has a purpose.</li>
+  </ul>
+
+  <h2>Examples of Minimalist Websites</h2>
+  <p>Many top companies use minimalistic design to build trust and showcase professionalism:</p>
+
+  <ul>
+    <li>Apple — clean layouts and strong product focus</li>
+    <li>Google — simple interfaces and functional UX</li>
+    <li>Dropbox — whitespace-heavy modern UI</li>
+    <li>Notion — clean typography + plenty of spacing</li>
+  </ul>
+
+  <h2>Should You Use Minimalist Design?</h2>
+  <p>
+    If you're trying to create a modern brand, improve UX, and reduce distractions—yes, 
+    minimalism is an excellent choice. But remember: minimal does NOT mean empty. It means 
+    deliberate, thoughtful, and functional.
+  </p>
+
 </section>
 
-<script>
-  // FAQ toggle
-  document.querySelectorAll(".faq-item h4").forEach((faqHeader) => {
-    faqHeader.addEventListener("click", () => {
-      const faqItem = faqHeader.parentElement;
-      faqItem.classList.toggle("active");
-    });
-  });
-</script>
-
+<!-- FOOTER -->
+<footer>
+  © 2025 Webora. All Rights Reserved.
+</footer>
+<script type="module" src="presence.js"></script>
 </body>
 </html>

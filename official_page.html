@@ -49,15 +49,15 @@
       <a href="company.html">About us</a>
     </div>
 
-  <!-- User dropdown -->
-  <div class="user-menu">
-    <button id="userBtn">👤 Account ▾</button>
-    <div class="dropdown">
-      <a href="profile.html">Profile</a>
-      <a href="settings.html">Settings</a>
-      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
-    </div>
-  </div>
+<div class="search-container">
+    <form class="search-box" id="searchForm">
+        <input type="text" placeholder="Search..." aria-label="Search input" id="searchInput">
+        <button type="reset" aria-label="Clear search"></button>
+    </form>
+
+    <!-- Suggestions will appear exactly below search -->
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
 </nav>
   <!-- Hero -->
   <header class="hero">
@@ -140,11 +140,16 @@
 <!-- Newsletter Section -->
 <section class="newsletter-section">
   <div class="newsletter-container">
-    <h2> Subscribe to Our Newsletter</h2>
+    <h2>Subscribe to Our Newsletter</h2>
     <p>Get the latest updates, offers, and web tips from Webora.</p>
 
     <form id="newsletterForm">
-      <input type="email" id="subscriberEmail" name="subscriber_email" placeholder="Enter your email" required>
+      <input
+        type="email"
+        id="subscriberEmail"
+        placeholder="Enter your email"
+        required
+      />
       <button type="submit">Subscribe</button>
     </form>
 
@@ -152,44 +157,96 @@
   </div>
 </section>
 
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("RASd6lt0BlKCGSMqt"); // Your Public Key
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import {
+    getFirestore,
+    doc,
+    setDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+  emailjs.init("RASd6lt0BlKCGSMqt");
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8F-3r-4iPmacTlGrcNNCxpHiGswoaQ5g",
+    authDomain: "webora-core-16d65.firebaseapp.com",
+    projectId: "webora-core-16d65",
+    storageBucket: "webora-core-16d65.appspot.com",
+    messagingSenderId: "734418138539",
+    appId: "1:734418138539:web:d4b6e2cf73662e6f1f4eee"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
   const form = document.getElementById("newsletterForm");
   const responseMessage = document.getElementById("responseMessage");
+  const button = form.querySelector("button");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const subscriberEmail = document.getElementById("subscriberEmail").value;
+  async function hashEmail(email) {
+    const data = new TextEncoder().encode(email.toLowerCase());
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(hashBuffer))
+      .map(b => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
 
-    // ---- 1️⃣ Send to Admin ----
-    emailjs.send("service_tb07o4u", "template_0w9d5ot", {
-      subscriber_email: subscriberEmail,
-      recipient_type: "admin"
-    })
-    .then(() => {
-      // ---- 2️⃣ Send to Subscriber ----
-      return emailjs.send("service_tb07o4u", "template_0w9d5ot", {
-        subscriber_email: subscriberEmail,
-        recipient_type: "subscriber",
-        to_email: subscriberEmail // subscriber gets mail
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    /* ⏳ Anti-spam cooldown (1 minute) */
+    const lastSub = localStorage.getItem("webora_last_subscribe");
+    const now = Date.now();
+
+    if (lastSub && now - lastSub < 600_000) {
+      responseMessage.textContent =
+        " Please wait a minute before subscribing again.";
+      responseMessage.style.color = "orange";
+      return;
+    }
+
+    localStorage.setItem("webora_last_subscribe", now);
+
+    const email = document.getElementById("subscriberEmail").value.trim();
+    if (!email) return;
+
+    button.disabled = true;
+    responseMessage.textContent = "Subscribing...";
+    responseMessage.style.color = "#cbd5e1";
+
+    try {
+      const hash = await hashEmail(email);
+      const ref = doc(db, "newsletter_subscribers", hash);
+
+      await setDoc(ref, {
+        email: email,
+        createdAt: serverTimestamp()
       });
-    })
-    .then(() => {
-      responseMessage.textContent = "✅ Subscription successful! Check your inbox.";
-      responseMessage.style.color = "green";
+
+      await emailjs.send("service_tb07o4u", "template_0w9d5ot", {
+        subscriber_email: email,
+        to_email: email,
+        unsubscribe_url:
+          "unsubscribe.html" + hash
+      });
+
+      responseMessage.textContent = "Subscription successful!";
+      responseMessage.style.color = "limegreen";
       form.reset();
-    })
-    .catch((error) => {
-      responseMessage.textContent = "❌ Something went wrong. Try again.";
+
+    } catch (err) {
+      console.error(err);
+      responseMessage.textContent = "Something went wrong";
       responseMessage.style.color = "red";
-      console.error("EmailJS Error:", error);
-    });
+    } finally {
+      button.disabled = false;
+    }
   });
 </script>
-
-
 
 <!-- CSS Styling -->
 <style>
@@ -347,6 +404,6 @@
   </div>
 </div>
 <script src="js/chat.js"></script>
-
+<script type="module" src="presence.js"></script>
 </body>
 </html>

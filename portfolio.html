@@ -45,15 +45,15 @@
   <a href="company.html">About us</a>
 </div>
 
-  <!-- User dropdown -->
-  <div class="user-menu">
-    <button id="userBtn">👤 Account ▾</button>
-    <div class="dropdown">
-      <a href="profile.html">Profile</a>
-      <a href="settings.html">Settings</a>
-      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
-    </div>
-  </div>
+<div class="search-container">
+    <form class="search-box" id="searchForm">
+        <input type="text" placeholder="Search..." aria-label="Search input" id="searchInput">
+        <button type="reset" aria-label="Clear search"></button>
+    </form>
+
+    <!-- Suggestions will appear exactly below search -->
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
 </nav>
 
   <section id="portfolio" class="portfolio-section">
@@ -129,6 +129,6 @@
   </div>
 </div>
 <script src="js/chat.js"></script>
-
+<script type="module" src="presence.js"></script>
 </body>
 </html>

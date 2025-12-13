@@ -41,16 +41,16 @@
    <a href="contact.html">Contact</a>
    <a href="company.html">About us</a>
  </div>
+<div class="search-container">
+    <form class="search-box" id="searchForm">
+        <input type="text" placeholder="Search..." aria-label="Search input" id="searchInput">
+        <button type="reset" aria-label="Clear search"></button>
+    </form>
 
-  <!-- User dropdown -->
-  <div class="user-menu">
-    <button id="userBtn">👤 Account ▾</button>
-    <div class="dropdown">
-      <a href="profile.html">Profile</a>
-      <a href="settings.html">Settings</a>
-      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
-    </div>
-  </div>
+    <!-- Suggestions will appear exactly below search -->
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+
 </nav>
 
   <section class="page-header">
@@ -80,7 +80,7 @@
   </section>
   <!-- Project Quote Calculator -->
 <section id="project-calculator" class="calculator-section">
-  <h2>💰 Project Quote Calculator</h2>
+  <h2> Project Quote Calculator</h2>
   <p class="subtitle">Get an instant estimate for your next project with Webora.</p>
 
   <iframe 
@@ -95,7 +95,7 @@
     <p>© 2025 Webora. All rights reserved.</p>
   </footer>
   <script type="module" src="/js/account.js"></script>
-    <!-- Chat widget (paste before </body>) -->
+
 <div id="chat-widget" class="chat-widget">
   <button id="chat-toggle" class="chat-toggle" aria-label="Open chat">💬</button>
 
@@ -117,6 +117,6 @@
   </div>
 </div>
 <script src="js/chat.js"></script>
-
+<script type="module" src="presence.js"></script>
 </body>
 </html>

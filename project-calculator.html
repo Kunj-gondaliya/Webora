@@ -249,7 +249,7 @@
 
       let total = category + hosting;
       let breakdownHTML = `
-        <h4>📊 Project Cost Breakdown</h4>
+        <h4> Project Cost Breakdown</h4>
         <table>
           <tr><th>Item</th><th>Cost (₹)</th></tr>
           <tr><td>Base Category</td><td>${category}</td></tr>
@@ -266,12 +266,13 @@
       const min = adjusted * 0.9, max = adjusted * 1.25;
 
       document.getElementById("quoteResult").innerHTML = `
-        💡 Estimated Range: <strong>₹${min.toLocaleString()} – ₹${max.toLocaleString()}</strong><br>
+         Estimated Range: <strong>₹${min.toLocaleString()} – ₹${max.toLocaleString()}</strong><br>
         <span style="font-size:0.9rem; opacity:0.8;">(Final quote depends on project depth and design complexity.)</span>
       `;
 
       document.getElementById("breakdown").innerHTML = breakdownHTML;
     }
   </script>
+  <script type="module" src="presence.js"></script>
 </body>
 </html>

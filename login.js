@@ -3,15 +3,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebas
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 // ✅ Replace with your Firebase config
-const firebaseConfig = {
-apiKey: "AIzaSyDYiz4RH6VE0N0MR7RnOQwpHuPqP2Q7uTc",
-  authDomain: "webora-core.firebaseapp.com",
-  projectId: "webora-core",
-  storageBucket: "webora-core.firebasestorage.app",
-  messagingSenderId: "253670284180",
-  appId: "1:253670284180:web:fe64f6cc575373dc198d81",
-  measurementId: "G-SY1LC7S53G"
-};
+  /* Firebase Config */
+    /* Firebase Config */
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8F-3r-4iPmacTlGrcNNCxpHiGswoaQ5g",
+    authDomain: "webora-core-16d65.firebaseapp.com",
+    projectId: "webora-core-16d65",
+    storageBucket: "webora-core-16d65.appspot.com",
+    messagingSenderId: "734418138539",
+    appId: "1:734418138539:web:d4b6e2cf73662e6f1f4eee"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -33,3 +34,44 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
       alert("Login Failed: " + error.message);
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const resetBtn = document.getElementById("resetBtn");
+
+  if (!resetBtn) return; // Only run on forgot.html
+
+  resetBtn.addEventListener("click", () => {
+    const email = document.getElementById("resetEmail").value;
+
+    if (!email) {
+      document.querySelector(".input-box").classList.add("shake");
+      setTimeout(() => {
+        document.querySelector(".input-box").classList.remove("shake");
+      }, 300);
+      return;
+    }
+
+    // Show loading spinner
+    resetBtn.classList.add("loading");
+
+    // Firebase reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        resetBtn.classList.remove("loading");
+        showPopup();
+        setTimeout(() => portalRedirect("login.html"), 1400);
+      })
+      .catch((error) => {
+        resetBtn.classList.remove("loading");
+        alert(error.message);
+      });
+  });
+});
+// delete if needed by kunj
+function showPopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+  popup.style.opacity = "0";
+
+  gsap.to(popup, { opacity: 1, scale: 1, duration: 0.4 });
+  gsap.to(popup, { opacity: 0, duration: 0.6, delay: 1 });
+}

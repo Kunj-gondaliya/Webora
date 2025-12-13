@@ -49,15 +49,15 @@
    <a href="company.html">About us</a>
  </div>
 
-  <!-- User dropdown -->
-  <div class="user-menu">
-    <button id="userBtn">👤 Account ▾</button>
-    <div class="dropdown">
-      <a href="profile.html">Profile</a>
-      <a href="settings.html">Settings</a>
-      <div class="logbtn"><button id="logoutBtn">Logout</button></div>
-    </div>
-  </div>
+<div class="search-container">
+    <form class="search-box" id="searchForm">
+        <input type="text" placeholder="Search..." aria-label="Search input" id="searchInput">
+        <button type="reset" aria-label="Clear search"></button>
+    </form>
+
+    <!-- Suggestions will appear exactly below search -->
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
 </nav>
 
   <section class="contact-section">
@@ -109,11 +109,11 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
 
   emailjs.send("service_tb07o4u", "template_e2gje16", templateParams)
     .then(() => {
-      document.getElementById("form-status").innerText = "✅ Message sent successfully!";
+      document.getElementById("form-status").innerText = "Message sent! We will review your request in 2 to 6 hours";
       document.getElementById("form-status").style.color = "green";
       this.reset();
     }, (error) => {
-      document.getElementById("form-status").innerText = "❌ Failed to send. Try again later.";
+      document.getElementById("form-status").innerText = " Failed to send message due to network traffic. Try again later.";
       document.getElementById("form-status").style.color = "red";
       console.error("EmailJS Error:", error);
     });
@@ -142,6 +142,6 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
   </div>
 </div>
 <script src="js/chat.js"></script>
-
+<script type="module" src="presence.js"></script>
 </body>
 </html>

@@ -3,15 +3,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebas
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 // ✅ Same Firebase config as login
-const firebaseConfig = {
-  apiKey: "AIzaSyDYiz4RH6VE0N0MR7RnOQwpHuPqP2Q7uTc",
-  authDomain: "webora-core.firebaseapp.com",
-  projectId: "webora-core",
-  storageBucket: "webora-core.firebasestorage.app",
-  messagingSenderId: "253670284180",
-  appId: "1:253670284180:web:fe64f6cc575373dc198d81",
-  measurementId: "G-SY1LC7S53G"
-};
+  /* Firebase Config */
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8F-3r-4iPmacTlGrcNNCxpHiGswoaQ5g",
+    authDomain: "webora-core-16d65.firebaseapp.com",
+    projectId: "webora-core-16d65",
+    storageBucket: "webora-core-16d65.appspot.com",
+    messagingSenderId: "734418138539",
+    appId: "1:734418138539:web:d4b6e2cf73662e6f1f4eee"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
