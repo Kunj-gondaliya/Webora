@@ -25,6 +25,7 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   <meta content="width=device-width, initial-scale=1" name=
   "viewport">
   <meta content="Webflow" name="generator">
+  <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/css/portal-to-the-future.webflow.shared.735a0b4f4.min.css">
   <script src="https://use.typekit.net/kgx8coj.js" type=
   "text/javascript"></script>
@@ -99,16 +100,45 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <style>
-    .intro-text {
-      position: fixed;
-      top: 40%;
-      text-align: center;
-      font-size: 3rem;
-      opacity: 0;
-      pointer-events: none; in
-    }
-  </style>
+.intro-text {
+  position: fixed;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  opacity: 0;
+  pointer-events: none;
+}
+.go-official-btn {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.06);
+  color: dimgrey;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
 
+.go-official-btn:hover {
+
+  border-color: rgba(56,189,248,0.6);
+
+}
+.go-official-btn {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 999999;
+  pointer-events: auto; 
+}
+</style>
 </head>
 <body>
   <div class="loader">
@@ -122,29 +152,46 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   </div>
   <div class="ai-img_text-wrapper">
   <div class="intro-text">
-    <div class="line1">Welcome to Webora</div>
-    <div class="line2" style="margin-top: 10px; font-size: 1.6rem;">Keep Scrolling Till the end</div>
+    <div class="line1">We are Webora</div>
+    <div class="line2" style="margin-top: 10px; font-size: 1.6rem;">To see our integrated Work, Scroll..</div>
+    <a href="official_page.html" class="go-official-btn">Skip The Intro</a>
   </div>
   </div>
 
-  <script>
-  // Fade in slower, more cinematic
+<script>
+  
+  gsap.to(".intro-text", {
+    opacity: 1,
+    duration: 1.2,
+    ease: "power2.out"
+  });
+
+
   gsap.fromTo(".line1",
     { y: 40, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+    { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", delay: 0.2 }
   );
 
   gsap.fromTo(".line2",
     { y: 40, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", delay: 0.6 }
+    { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", delay: 0.8 }
   );
 
-  // Fade out *much later*
-  const fadeDistance = 1200; // increase this for even longer
+  
+  const fadeStart = 200;   
+  const fadeDistance = 900;
 
   window.addEventListener("scroll", () => {
-    const fade = Math.min(window.scrollY / fadeDistance, 1);
-    gsap.to(".intro-text", { opacity: 1 - fade, duration: 0.3 });
+    const scroll = window.scrollY;
+
+    if (scroll > fadeStart) {
+      const fade = Math.min((scroll - fadeStart) / fadeDistance, 1);
+      gsap.to(".intro-text", {
+        opacity: 1 - fade,
+        duration: 0.2,
+        overwrite: true
+      });
+    }
   });
 </script>
  <div class="ai-img_text-wrapper">
@@ -879,6 +926,7 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
       </div>
     </div>
   </section>
+
   <section class="section section--ar">
     <div class=
     "w-layout-blockcontainer container container--ar w-container">
@@ -989,17 +1037,11 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   if (localStorage.getItem("loggedIn") === "true") {
     animateAndRedirect("official_page.html");
   } else {
-    animateAndRedirect("signup.html");
+    animateAndRedirect("official_page.html");
   }
 }
 </script>
-          <div fade-in="1" class="footer_wrapper-text"><img src=
-          "https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture.avif"
-          loading="lazy" sizes=
-          "(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9791870117188px"
-          srcset=
-          "https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture-p-500.avif 500w, https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture-p-800.avif 800w, https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture-p-1080.avif 1080w, https://cdn.prod.website-files.com/688c53958c286a5e5aa8aae5/68a8140df726316f483f67f7_portal%20picture.avif 2169w"
-          alt=""></div>
+        
         </div>
       </div>
     </div>
@@ -1029,18 +1071,18 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   type="text/javascript"></script>
   <script>
 
-  /* ---------- 1. helpers ---------- */
+  
   function makeMapper(pxRange) {
-  // Factory that returns {mapX, mapY} for a given ±pixel range
+  
   const mapX = gsap.utils.mapRange(0, innerWidth,   pxRange, -pxRange);
   const mapY = gsap.utils.mapRange(0, innerHeight,  pxRange, -pxRange);
-  return () => ({ mapX, mapY });        // closure so we can refresh on resize
+  return () => ({ mapX, mapY });        
   }
 
-  let mkArt  = makeMapper(innerWidth * 0.04);  // 5 vw in px
-  let mkBlank = makeMapper(innerWidth * 0.02); // 2.5 vw in px
+  let mkArt  = makeMapper(innerWidth * 0.04);  
+  let mkBlank = makeMapper(innerWidth * 0.02);
 
-  /* ---------- 2. floaty setters ---------- */
+
   const float = { duration: 0.6, ease: "sine.out" };
 
   const setArtX   = gsap.quickTo(".ai-img_artwork-wrapper",  "x", float);
@@ -1049,7 +1091,7 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   const setBlankX = gsap.quickTo(".ai-img_blank-wrapper", "x", float);
   const setBlankY = gsap.quickTo(".ai-img_blank-wrapper", "y", float);
 
-  /* ---------- 3. cursor driver ---------- */
+
   addEventListener("pointermove", ({ clientX, clientY }) => {
   const { mapX: ax, mapY: ay } = mkArt();
   const { mapX: bx, mapY: by } = mkBlank();
@@ -1058,15 +1100,15 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   setBlankX(bx(clientX) );   setBlankY(by(clientY) );
   });
 
-  /* ---------- 4. stay responsive ---------- */
+
   addEventListener("resize", () => {
-  mkArt   = makeMapper(innerWidth * 0.05);    // 5 vw
-  mkBlank = makeMapper(innerWidth * 0.025);   // 2.5 vw
+  mkArt   = makeMapper(innerWidth * 0.05);    
+  mkBlank = makeMapper(innerWidth * 0.025);   
   });
   </script>
   <script>
 function animateAndRedirect(url) {
-  // Create a full-screen overlay for animation
+  
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
   overlay.style.top = "0";
@@ -1078,7 +1120,6 @@ function animateAndRedirect(url) {
   overlay.style.opacity = "0";
   document.body.appendChild(overlay);
 
-  // Animate the overlay using GSAP
   gsap.to(overlay, {
     opacity: 1,
     duration: 0.8,
@@ -1089,13 +1130,11 @@ function animateAndRedirect(url) {
   });
 }
 
-// Example usage (your button)
-
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script>
-/* ---------- FUTURISTIC PORTAL TRANSITION WITH PARTICLES ---------- */
+
 
 function createPortalOverlay(isEntry) {
   // Main glowing portal
@@ -1181,5 +1220,125 @@ window.addEventListener("load", () => {
 });
 </script>
 <script type="module" src="presence.js"></script>
+<section class="contact-cards-section">
+
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    .contact-cards-section {
+      padding: 100px 10%;
+      background: #0b0f14; /* deep black */
+      color: #e5e7eb;
+      text-align: center;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .contact-title {
+      font-size: 2.6rem;
+      margin-bottom: 60px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #f9fafb;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.03);
+      padding: 34px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .contact-card:hover::before {
+      opacity: 1;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(56,189,248,0.5);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+
+    .contact-card span {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 8px rgba(56,189,248,0.4));
+    }
+
+    .contact-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .contact-card p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: #9ca3af;
+      word-break: break-word;
+    }
+
+    @media (max-width: 600px) {
+      .contact-title {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+
+  <h2 class="contact-title">Let’s Build Something Powerful</h2>
+
+  <div class="contact-cards">
+
+    <div class="contact-card">
+     <span>✉️</span>
+      <h3>Email</h3>
+      <p>gondaliyakunj71@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <span>📞</span>
+      <h3>Phone</h3>
+      <p>+91 97272 09868</p>
+    </div>
+
+    <div class="contact-card">
+      <span>🌍</span>
+      <h3>Location</h3>
+      <p>India · Working Worldwide</p>
+    </div>
+
+    <div class="contact-card">
+      <span>💻</span>
+      <h3>Studio</h3>
+      <p>Webora — Digital Engineering</p>
+    </div>
+
+  </div>
+</section>
+
+
 </body>
 </html>
