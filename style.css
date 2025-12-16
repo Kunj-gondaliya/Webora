@@ -48,7 +48,7 @@ nav .menu a {
 }
 
 nav .menu a:hover {
-  color: lightpink;
+  color: #6f9283;
 }
 
 /* ========== HERO (Parallax) ========== */
@@ -479,7 +479,7 @@ nav {
   bottom: -3px;
   width: 0;
   height: 2px;
-  background: #007bff; /* underline color */
+  background: #6f9283; /* underline color */
   transition: width 0.3s ease;
 }
 
@@ -1688,10 +1688,12 @@ body.dark-mode footer {
   color: #aaa;
 }
 /* Chat widget styles */
-.chat-widget { position: fixed; right: 18px; bottom: 18px; z-index: 2000; font-family: 'Poppins', sans-serif; }
+.chat-widget { position: fixed; 
+right: 18px; bottom: 18px; z-index: 2000; font-family: 'Poppins', sans-serif; }
 .chat-toggle {
   background: linear-gradient(90deg,#007bff,#00c6ff);
-  border: none; color: #fff; width: 56px; height: 56px; border-radius: 50%;
+  border: none; color: #fff; width: 56px; margin-right: 10px; margin-bottom: 10px; height: 56px;
+border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0,0,0,0.18); cursor: pointer; font-size: 22px;
 }
 .chat-panel {
@@ -2161,4 +2163,187 @@ body.dark-mode footer {
 
 #suggestions div:hover {
     background: #f5f5f5;
+}
+/* ===============================
+   WEBORA – GLOBAL THEME
+   =============================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== THEME VARIABLES (CHANGE HERE ONLY) ===== */
+:root {
+  /* Backgrounds */
+  --bg-main: #f5f5f5;
+  --bg-hero: #6f9283;
+  --bg-card: indianred;
+  --bg-soft: #eef3f1;
+
+  /* Text */
+  --text-main: #1f2933;
+  --text-muted: #5f6f68;
+  --text-inverse: #ffffff;
+
+  /* Accent */
+  --accent: #5a7f71;
+  --accent-dark: #48695d;
+
+  /* Borders & shadow */
+  --border-light: #dde5e1;
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   RESET & BASE
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Poppins', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* ===============================
+   TYPOGRAPHY
+   =============================== */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+nav {
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero,
+.page-header {
+  background: var(--bg-hero);
+  color: var(--text-inverse);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1,
+.page-header h1,
+.hero p,
+.page-header p {
+  color: var(--text-inverse);
+}
+
+/* ===============================
+   SECTIONS
+   =============================== */
+section {
+  padding: 4rem 2.5rem;
+}
+
+/* ===============================
+   CARDS (Services, Pricing, Blog, etc.)
+   =============================== */
+.card,
+.service-card,
+.feature-card,
+.pricing-card,
+.testimonial-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+}
+.card h1 h2 h3 h4 h5 h6  {
+  color: blanchedalmond;
+}
+.card-body h1 h2 h3 h4 h5 h6 {
+  color: blanchedalmond;
+}
+
+.card p,
+.service-card p,
+.feature-card p {
+  color: lightsalmon;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+button,
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   FORMS
+   =============================== */
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-soft);
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer {
+  background: var(--bg-soft);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
 }

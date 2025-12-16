@@ -63,24 +63,25 @@
   <header class="hero">
     <h1>Building Modern Websites for Your Business</h1>
     <p>Webora delivers fast, professional, and responsive websites to help your brand grow.</p>
-    <a href="services.html"><button>Explore Services</button></a>
+    <a href="services.html"><button style="border-radius: 100px;">Explore Services</button></a>
   </header>
 
   <!-- About -->
   <section class="why-choose-us">
-  <h2>Why Choose Us</h2>
+  <h2 style="color: dimgray;">Why Choose Us</h2>
   <div class="features">
 
-    <div class="feature-card" onclick="openModal('fast')">
+    <div class="feature-card"
+style="background-color: white; border: 1.5px solid lightgrey;"onclick="openModal('fast')">
       <div class="what"><img src="assets/icons/speed.jpg" alt="Fast Delivery"></div>
       <h3>Fast Delivery</h3>
-      <p>Quick turnaround time for all projects.</p>
+      <p style="color: black;">Quick turnaround time for all projects.</p>
     </div>
 
-    <div class="feature-card align" onclick="openModal('support')">
+    <div class="feature-card align" style="background-color: white; border: 1.5px solid lightgrey;" onclick="openModal('modal-support')">
       <img src="assets/icons/support.png" alt="24/7 Support">
       <h3>24/7 Support</h3>
-      <p>We’re always here for you.</p>
+      <p style="color: black;">We’re always here for you.</p>
     </div>
 
   </div>
@@ -97,13 +98,13 @@
 
 <div id="modal-support" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('support')">&times;</span>
+    <span class="close" onclick="closeModal('modal-support')">&times;</span>
     <h2>24/7 Support</h2>
     <p>Our team is available round the clock to resolve any queries, provide updates, and ensure your business runs smoothly.</p>
   </div>
 </div>
 <section class="web-development">
-  <h2>Web Development</h2>
+  <h2 style="color: dimgray;">Web Development</h2>
   <p>
     We create modern, responsive, and scalable websites that help businesses stand out online.
     Our services include everything from simple landing pages to advanced e-commerce platforms.
@@ -120,19 +121,19 @@
   <h2>What Our Clients Say</h2>
   <div class="testimonial-container">
     
-    <div class="testimonial-card">
-      <p>"Webora helped us launch our startup website in record time. The design is modern and customers love it!"</p>
-      <h4>- Sarah Johnson, Startup Founder</h4>
+    <div class="testimonial-card" style="background: #800000;">
+      <p style="color: lightsalmon;">"Webora helped us launch our startup website in record time. The design is modern and customers love it!"</p>
+      <h4 style="color: blanchedalmond;">- Sarah Johnson, Startup Founder</h4>
     </div>
 
-    <div class="testimonial-card">
-      <p>"Their e-commerce platform boosted our sales by 40%. The team is super supportive and professional."</p>
-      <h4>- Rahul Mehta, Store Owner</h4>
+    <div class="testimonial-card" style="background: #800000;">
+      <p style="color: lightsalmon;">"Their e-commerce platform boosted our sales by 40%. The team is super supportive and professional."</p>
+      <h4 style="color: blanchedalmond;">- Rahul Mehta, Store Owner</h4>
     </div>
 
-    <div class="testimonial-card">
-      <p>"Affordable, fast, and trustworthy. I recommend Webora to every small business looking for growth."</p>
-      <h4>- Emily Carter, Business Consultant</h4>
+    <div class="testimonial-card" style="background: #800000;">
+      <p style="color: lightsalmon;">"Affordable, fast, and trustworthy. I recommend Webora to every small business looking for growth."</p>
+      <h4 style="color: blanchedalmond;">- Emily Carter, Business Consultant</h4>
     </div>
 
   </div>
@@ -150,7 +151,7 @@
         placeholder="Enter your email"
         required
       />
-      <button type="submit">Subscribe</button>
+      <button type="submit" style="background: #5a7f71;">SUBSCRIBE</button>
     </form>
 
     <p id="responseMessage"></p>
