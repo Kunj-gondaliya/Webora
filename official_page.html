@@ -80,6 +80,75 @@
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(60px); }
 }
+/* ===== VIDEO HERO ===== */
+.video-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/* Video */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+  color: #e5e7eb;
+}
+
+.hero-btn {
+  background: #6f9283;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #5a7f71;
+  transform: translateY(-2px);
+}
 </style>
 </head>
 <body>
@@ -115,13 +184,20 @@
 </div>
 </nav>
   <!-- Hero -->
-<header class="hero">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
+<header class="hero video-hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
     <h1>Building Modern Websites for Your Business</h1>
-    <p>Webora delivers fast, professional, and responsive websites to help your brand grow.</p>
-    <a href="services.html"><button>Explore Services</button></a>
-  </header>
+    <p>Webora delivers fast, professional, and scalable web solutions.</p>
+    <a href="services.html" class="hero-btn" style="border-radius: 50px;">Explore Services</a>
+  </div>
+</header>
 
   <!-- About -->
   <section class="why-choose-us">
