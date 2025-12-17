@@ -22,6 +22,42 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="animations.js"></script>
 <script type="module" src="presence.js"></script>
+  <style>
+
+/* FLOATING BLOBS */
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  background: #6f9283;
+  text-align: center;
+}
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, indianred, pink);  opacity: 0.25;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 4s infinite ease-in-out;
+}
+
+.blob1 {
+  top: -100px;
+  left: -120px;
+}
+
+.blob2 {
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(60px); }
+}
+</style>
 </head>
 <body>
     <!-- Header with Logo + Text -->
@@ -55,6 +91,8 @@
 </nav>
 
   <section class="page-header">
+    <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
     <h1>Careers at Webora</h1>
     <p><h4>Join our growing team of creative developers and designers.</h4></p>
   </section>

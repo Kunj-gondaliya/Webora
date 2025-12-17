@@ -24,6 +24,42 @@
   <!-- GSAP CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="animations.js"></script>
+  <style>
+
+/* FLOATING BLOBS */
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  background: #6f9283;
+  text-align: center;
+}
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, indianred, pink);  opacity: 0.25;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 14s infinite ease-in-out;
+}
+
+.blob1 {
+  top: -100px;
+  left: -120px;
+}
+
+.blob2 {
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(60px); }
+}
+</style>  
 </head>
 <body>
     <!-- Header with Logo + Text -->
@@ -57,6 +93,8 @@
 </nav>
 
   <section id="portfolio" class="page-header">
+    <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
     <div class="container">
       <h2 style="color: white;">Our Portfolio</h2>
       <p class="section-subtitle" align="center">Some of our best work for clients worldwide.</p>

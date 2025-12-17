@@ -26,6 +26,61 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script><!-- GSAP CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="animations.js"></script>
+  <style>
+  /* ROTATING LIGHT EFFECT – HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(99,102,241,0.35), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(34,211,238,0.35), transparent 40%);
+  animation: rotateLight 18s linear infinite;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rotateLight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* FLOATING BLOBS */
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #22D3EE, #6366F1);
+  opacity: 0.25;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 14s infinite ease-in-out;
+}
+
+.blob1 {
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(60px); }
+}
+</style>
 </head>
 <body>
   <!-- Header with Logo + Text -->
@@ -60,10 +115,12 @@
 </div>
 </nav>
   <!-- Hero -->
-  <header class="hero">
+<header class="hero">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
     <h1>Building Modern Websites for Your Business</h1>
     <p>Webora delivers fast, professional, and responsive websites to help your brand grow.</p>
-    <a href="services.html"><button style="border-radius: 100px;">Explore Services</button></a>
+    <a href="services.html"><button>Explore Services</button></a>
   </header>
 
   <!-- About -->

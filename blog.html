@@ -28,12 +28,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Primary Meta Tags -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
 
+/* FLOATING BLOBS */
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  background: #6f9283;
+  text-align: center;
+}
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, indianred, pink);  opacity: 0.25;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 14s infinite ease-in-out;
+}
+
+.blob1 {
+  top: -100px;
+  left: -120px;
+}
+
+.blob2 {
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(60px); }
+}
+</style>
 </head>
 <body>
   <!-- Header with Logo + Text -->
  <header class="site-header">
-<div class="<logo-container></logo-container>">
+<div class="logo-container">
   <img src="assets/icons/HI.jpg" alt="Webora Logo" class="logo-img">
 
 </div>
@@ -65,10 +100,13 @@
 
 
 
-  <section class="page-header">
-    <h1>Webora Blog</h1>
-    <p><h4>Insights and updates from our team.</h4></p>
-  </section>
+<section class="page-header">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <h1>Webora Blog</h1>
+  <h4>Insights and updates from our team.</h4>
+</section>
 
   <section class="blog">
     <div class="card" onclick="window.location.href='webtrend.html'">
