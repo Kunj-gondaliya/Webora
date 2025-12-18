@@ -63,11 +63,14 @@
 <script>
 function checkLogin() {
   if (localStorage.getItem("loggedIn") === "true") {
-    animateAndRedirect("index.html");
+    // User is logged in, redirect to official page
+    window.location.href = "official_page.html";
   } else {
-    animateAndRedirect("login.html");
+    // User is not logged in, redirect to login page
+    window.location.href = "login.html";
   }
 }
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script>
