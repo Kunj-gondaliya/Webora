@@ -20,7 +20,8 @@
 <body>
   <div class="wrapper">
     <div class="login-box">
-      <form id="loginForm">
+      <form id="loginForm" onsubmit="login(event)">
+
         <h2>Login</h2>
 
         <div class="input-box">
@@ -49,11 +50,14 @@
     </div>
   </div>
   <script>
-  function login() {
-    // after checking username/password
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "index.html"; 
-  }
+function login(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // After checking username/password
+  localStorage.setItem("loggedIn", "true");  // Mark as logged in
+  window.location.href = "official_page.html"; // Redirect to official page
+}
+
 </script>
 
   <!-- Icons -->
