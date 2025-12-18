@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html data-wf-domain="weboracore.com"
 
@@ -149,17 +150,50 @@ data-wf-page="688c53958c286a5e5aa8aab7" data-wf-site=
   z-index: 999999;
   pointer-events: auto; 
 }
+/* Loader container */
+.loader {
+  display: flex;
+  justify-content: space-evenly; /* Ensure columns are evenly spaced */
+  align-items: center; /* Vertically center columns */
+  height: 100vh; /* Full viewport height for the loader */
+}
+
+/* Each column within the loader */
+.loader_column {
+  display: flex;
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  width: 25%; /* Ensure each column takes up enough space */
+  text-align: center; /* Center the text inside the <p> */
+}
+
+/* Styling for the text */
+.main-heading {
+  font-size: 3rem; /* Increased font size */
+  font-weight: bold;
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding if needed */
+}
+
+
 </style>
 </head>
 <body>
   <div class="loader">
-    <div class="loader_column is-2">
-      <p class="main-heading">Tomorrow</p>
-    </div>
-    <div class="loader_column is-3">
-      <p class="main-heading">Awaits</p>
-    </div>
-    
+  <div class="loader_column is-2">
+    <p class="main-heading">Where</p>
+  </div>
+  <div class="loader_column is-3">
+    <p class="main-heading">Ideas</p>
+  </div>
+  <div class="loader_column is-2">
+    <p class="main-heading">Meet</p>
+  </div>
+  <div class="loader_column is-3">
+    <p class="main-heading">Future</p>
+  </div>
+</div>
+
   </div>
   <div class="ai-img_text-wrapper">
   <div class="intro-text">
@@ -1239,7 +1273,7 @@ window.addEventListener("load", () => {
 
     .contact-cards-section {
       padding: 100px 10%;
-      background: #0b0f14; /* deep black */
+      background: black; /* deep black */
       color: #e5e7eb;
       text-align: center;
       font-family: 'Inter', system-ui, sans-serif;
