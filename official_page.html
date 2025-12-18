@@ -154,10 +154,15 @@
 <body>
   <script>
 window.addEventListener("DOMContentLoaded", () => {
-  checkLogin();
+  checkLogin();  // Check login status when page loads
 });
 
-
+function checkLogin() {
+  if (localStorage.getItem("loggedIn") !== "true") {
+    // If not logged in, redirect to login page
+    window.location.href = "login.html";
+  }
+}
     
   </script>
   <!-- Header with Logo + Text -->
