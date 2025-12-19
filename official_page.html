@@ -152,19 +152,18 @@
 </style>
 </head>
 <body>
-  <script>
-window.addEventListener("DOMContentLoaded", () => {
-  checkLogin();  // Check login status when page loads
-});
-
+<script>
 function checkLogin() {
-  if (localStorage.getItem("loggedIn") !== "true") {
-    // If not logged in, redirect to login page
+  if (localStorage.getItem("loggedIn") === "true") {
+    // User is logged in, redirect to official page
+    window.location.href = "official_page.html";
+  } else {
+    // User is not logged in, redirect to login page
     window.location.href = "login.html";
   }
 }
-    
-  </script>
+
+</script>
   <!-- Header with Logo + Text -->
  <header class="site-header">
 <div class="logo-container">
