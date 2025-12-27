@@ -149,16 +149,73 @@
   background: #5a7f71;
   transform: translateY(-2px);
 }
+.what-we-do {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: #800000;
+  
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: blanchedalmond;
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 🔹 MOBILE BASE */
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
 </style>
 </head>
 <body>
 <script>
 function checkLogin() {
   if (localStorage.getItem("loggedIn") === "true") {
-    // User is logged in, redirect to official page
+
     window.location.href = "official_page.html";
   } else {
-    // User is not logged in, redirect to login page
+
     window.location.href = "login.html";
   }
 }
@@ -211,19 +268,23 @@ function checkLogin() {
   </div>
 </header>
 
-  <!-- About -->
-  <section class="why-choose-us">
+<!-- About -->
+<section class="why-choose-us">
   <h2 style="color: dimgray;">Why Choose Us</h2>
+
   <div class="features">
 
     <div class="feature-card"
-style="background-color: white; border: 1.5px solid lightgrey;"onclick="openModal('fast')">
-      <div class="what"><img src="assets/icons/speed.jpg" alt="Fast Delivery"></div>
+      style="background-color: white; border: 1.5px solid lightgrey;"
+      onclick="openModal('fast')">
+      <img src="assets/icons/speed.jpg" alt="Fast Delivery">
       <h3>Fast Delivery</h3>
       <p style="color: black;">Quick turnaround time for all projects.</p>
     </div>
 
-    <div class="feature-card align" style="background-color: white; border: 1.5px solid lightgrey;" onclick="openModal('modal-support')">
+    <div class="feature-card align"
+      style="background-color: white; border: 1.5px solid lightgrey;"
+      onclick="openModal('support')">
       <img src="assets/icons/support.png" alt="24/7 Support">
       <h3>24/7 Support</h3>
       <p style="color: black;">We’re always here for you.</p>
@@ -237,17 +298,50 @@ style="background-color: white; border: 1.5px solid lightgrey;"onclick="openModa
   <div class="modal-content">
     <span class="close" onclick="closeModal('fast')">&times;</span>
     <h2>Fast Delivery</h2>
-    <p>We ensure that your projects are completed quickly without compromising quality. Our efficient workflows allow startups and businesses to launch faster.</p>
+    <p>
+      We ensure that your projects are completed quickly without compromising quality.
+    </p>
   </div>
 </div>
 
 <div id="modal-support" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal-support')">&times;</span>
+    <span class="close" onclick="closeModal('support')">&times;</span>
     <h2>24/7 Support</h2>
-    <p>Our team is available round the clock to resolve any queries, provide updates, and ensure your business runs smoothly.</p>
+    <p>
+      Our team is available round the clock to assist you.
+    </p>
   </div>
 </div>
+<section class="what-we-do">
+  <h2 class="section-title">What We Do</h2>
+  <p class="section-subtitle">
+    We design and build modern websites that help brands grow online.
+  </p>
+
+  <div class="services">
+    <div class="service-card">
+      <h3>Web Design</h3>
+      <p>
+        Clean, modern and user-focused designs that look great on every device.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>
+        Fast, responsive and scalable websites built with clean code.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Digital Presence</h3>
+      <p>
+        Helping brands build a strong and consistent online identity.
+      </p>
+    </div>
+  </div>
+</section>''
 <section class="web-development">
   <h2 style="color: dimgray; text-align: center;">Web Development</h2>
   <p>
@@ -302,7 +396,15 @@ style="background-color: white; border: 1.5px solid lightgrey;"onclick="openModa
     <p id="responseMessage"></p>
   </div>
 </section>
+<script>
+function openModal(name) {
+  document.getElementById(`modal-${name}`).style.display = "flex";
+}
 
+function closeModal(name) {
+  document.getElementById(`modal-${name}`).style.display = "none";
+}
+</script>
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
@@ -524,9 +626,42 @@ style="background-color: white; border: 1.5px solid lightgrey;"onclick="openModa
 </style>
 
   <!-- Footer -->
-  <footer>
+ <footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-col">
+      <h3>Webora</h3>
+      <p>Building modern digital experiences.</p>
+    </div>
+
+    <!-- Pages -->
+    <div class="footer-col">
+      <h4>Pages</h4>
+      
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      
+    </div>
+
+    <!-- Legal / Extra -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
     <p>© 2025 Webora. All rights reserved.</p>
-  </footer>
+  </div>
+</footer>
 <script type="module" src="/js/account.js"></script>
   <!-- Chat widget (paste before </body>) -->
 <div id="chat-widget" class="chat-widget">
