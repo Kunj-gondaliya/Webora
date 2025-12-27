@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary system files
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /config/
+Disallow: /tmp/
+
+# Block test & draft pages (if any)
+Disallow: /test/
+Disallow: /draft/
+
+# Allow important assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+Sitemap: https://weboracore.com/sitemap.xml
